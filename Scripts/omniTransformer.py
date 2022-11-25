@@ -140,8 +140,8 @@ if requiredData.resistance_file[0] != requiredData.resistance_file[0]:
 if requiredData.radius[0] != requiredData.radius[0]:
     sys.exit("'Radius' is required.")
 
-if requiredData.project_name[0] != requiredData.project_name[0]:
-    sys.exit("'Project name' is required.")
+#if requiredData.project_name[0] != requiredData.project_name[0]:
+#    sys.exit("'Project name' is required.")
 
 if generalOptions.source_from_resistance[0] == "No" and requiredData.source_file[0] != requiredData.source_file[0]:
     sys.exit("'Source from resistance' was set to 'No', therefore 'Source file' is required.")
@@ -177,7 +177,7 @@ file.write(
     "[Required]" + "\n"
     "resistance_file = " + os.path.join(dataPath, "omni_Required", requiredData.resistance_file[0]) + "\n"
     "radius = " + repr(requiredData.radius[0]) + "\n"
-    "project_name = " + os.path.join(wrkDir, "Scenario-" + repr(myScenarioID), "omni_Results") + "\n"
+    #"project_name = " + os.path.join(wrkDir, "Scenario-" + repr(myScenarioID), "omni_Results") + "\n"
     "source_file = " + requiredData.source_file[0] + "\n"
     "\n"
     "[General Options]" + "\n"
@@ -233,7 +233,9 @@ configName = "config.ini"
 file = open(os.path.join(dataPath, "omni_Required", "runOmniscape.jl"), "w")
 file.write(
     "cd(raw\"" + os.path.join(dataPath, "omni_Required") + "\")" + "\n"
-    "using Omniscape;" + "\n"
+    "\n"
+    "using Pkg; Pkg.add(\"Omniscape\")" + "\n"
+    "using Omniscape" + "\n"
     "run_omniscape(\"" + configName + "\")"
 )
 file.close()
@@ -268,3 +270,5 @@ if resistanceOptions.write_reclassified_resistance[0] == "true":
     myOutput.classified_resistance = pd.Series(os.path.join(wrkDir, "Scenario-" + repr(myScenarioID), "omni_Results", "classified_resistance.tif"))
 
 myParentScenario.save_datasheet(name = "omni_Results", data = myOutput, append = True)
+
+
