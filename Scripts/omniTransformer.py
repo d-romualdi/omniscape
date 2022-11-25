@@ -3,20 +3,20 @@
 import pysyncrosim as ps
 import pandas as pd
 import sys
-import os as os
+import os
 
 e = ps.environment._environment()
 wrkDir = e.output_directory.item()
 if os.path.exists(wrkDir) == False:
     os.mkdir(wrkDir)
 
-#dataPath = os.path.join("Data", "omni", "omni_Required.csv.external")
-
 myLibrary = ps.library(e.library_filepath.item(), package = "omni")
 myScenario = myLibrary.scenarios(sid = e.scenario_id.item())
 myScenarioID = e.scenario_id.item()
 myScenarioParentID = int(myScenario.parent_id)
 myParentScenario = myLibrary.scenarios(sid = myScenarioParentID)
+
+dataPath = os.path.join(e.input_directory.item(), "Scenario-" + repr(myScenarioID))
 
 
 
@@ -77,6 +77,9 @@ if resistanceOptions.reclassify_resistance.empty:
 
 if resistanceOptions.reclassify_resistance.item() == "No":
     resistanceOptions.reclass_table = pd.Series("None")
+
+if resistanceOptions.reclass_table[0] == resistanceOptions.reclass_table[0]:
+    resistanceOptions.reclass_table = pd.Series(os.path.join(dataPath, "omni_ResistanceOptions", resistanceOptions.reclass_table[0]))
 
 if resistanceOptions.write_reclassified_resistance[0] != resistanceOptions.write_reclassified_resistance[0]:
     resistanceOptions.write_reclassified_resistance = pd.Series("Yes")
@@ -169,12 +172,10 @@ if not futureConditions.empty:
  
 # Prepare configuration file (.ini) --------------------------------------------
 
-# "resistance_file = " + os.path.join(wrkDir, dataPath, requiredData.resistance_file[0]) + "\n"
-
-file = open("config.ini", "w")
+file = open(os.path.join(dataPath, "omni_Required", "config.ini"), "w")
 file.write(
     "[Required]" + "\n"
-    "resistance_file = " + requiredData.resistance_file[0] + "\n"
+    "resistance_file = " + os.path.join(dataPath, "omni_Required", requiredData.resistance_file[0]) + "\n"
     "radius = " + repr(requiredData.radius[0]) + "\n"
     "project_name = " + os.path.join(wrkDir, "Scenario-" + repr(myScenarioID), "omni_Results") + "\n"
     "source_file = " + requiredData.source_file[0] + "\n"
@@ -229,8 +230,9 @@ file.close()
 
 configName = "config.ini"
 
-file = open("runOmniscape.jl", "w")
+file = open(os.path.join(dataPath, "omni_Required", "runOmniscape.jl"), "w")
 file.write(
+    "cd(raw\"" + os.path.join(dataPath, "omni_Required") + "\")" + "\n"
     "using Omniscape;" + "\n"
     "run_omniscape(\"" + configName + "\")"
 )
@@ -241,7 +243,7 @@ file.close()
 # Run julia script with system call -------------------------------------------------------------
 
 jlExe = "C:\\Users\\CarinaFirkowski\\AppData\\Local\\Programs\\Julia-1.8.2\\bin\\julia.exe"
-runFile = os.path.abspath("runOmniscape.jl")
+runFile = os.path.join(dataPath, "omni_Required", "runOmniscape.jl")
 
 runOmniscape = jlExe + " " + runFile
 
@@ -262,8 +264,7 @@ if generalOptions.calc_flow_potential[0] == "true":
 if generalOptions.calc_normalized_current[0] == "true":
     myOutput.normalized_cum_currmap = pd.Series(os.path.join(wrkDir, "Scenario-" + repr(myScenarioID), "omni_Results", "normalized_cum_currmap.tif"))
 
-#if resistanceOptions.write_reclassified_resistance[0] == "true":
-#    myOutput.classified_resistance = pd.Series(os.path.join(wrkDir, "Scenario-" + repr(myScenarioID), "omni_Results", "classified_resistance.tif"))
+if resistanceOptions.write_reclassified_resistance[0] == "true":
+    myOutput.classified_resistance = pd.Series(os.path.join(wrkDir, "Scenario-" + repr(myScenarioID), "omni_Results", "classified_resistance.tif"))
 
-myScenario.save_datasheet(name = "omni_Results", data = myOutput, append = True)
 myParentScenario.save_datasheet(name = "omni_Results", data = myOutput, append = True)
