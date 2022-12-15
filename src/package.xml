@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package name="omniscape" displayName="Omni-directional habitat connectivity based on circuit theory" version="1.0.0">
+  <transformers>
+    <transformer name="omniscapeTransformer" isPrimary="True" transformerSpecificOutput="False" programName="python" programArguments="omniscapeTransformer.py" condaEnv="omniscapeEnvironment.yml">
+      <include>
+        <transformer name="corestime_Runtime" />
+      </include>
+      <datafeeds>
+        <datafeed name="juliaConfiguration" displayName="Julia Configuration" dataScope="Library">
+          <datasheets>
+            <datasheet name="juliaConfiguration" displayName="Julia Configuration" isSingleRow="True">
+              <columns>
+                <column name="juliaConfigurationID" dataType="Integer" isPrimary="True" />
+                <column name="julia_path" displayName="Julia executable" dataType="String" allowDbNull="False" isExternalFile="True" externalFileFilter="Julia |julia.exe" externalFileAbsolute="True" />
+              </columns>
+            </datasheet>
+          </datasheets>
+        </datafeed>
+        <datafeed name="Required" displayName="Required" dataScope="Scenario">
+          <datasheets>
+            <datasheet name="Required" displayName="Required" isSingleRow="True">
+              <columns>
+                <column name="RequiredID" dataType="Integer" isPrimary="True" />
+                <column name="ScenarioID" dataType="Integer" />
+                <column name="resistance_file" displayName="Resistance file" dataType="String" isExternalFile="True" externalFileFilter="GeoTIFF Files (*.tif)|*.tif|All Files (*.*)|*.*" isRaster="True" />
+                <column name="radius" displayName="Radius" dataType="Integer" validationType="WholeNumber" validationCondition="None" />
+                <column name="source_file" displayName="Source file" dataType="String" isExternalFile="True" externalFileFilter="GeoTIFF Files (*.tif)|*.tif|All Files (*.*)|*.*" isRaster="True" />
+              </columns>
+            </datasheet>
+          </datasheets>
+        </datafeed>
+        <datafeed name="GeneralOptions" displayName="General Options" dataScope="Scenario">
+          <datasheets>
+            <datasheet name="GeneralOptions" displayName="General Options" isSingleRow="True">
+              <columns>
+                <column name="GeneralOptionsID" dataType="Integer" isPrimary="True" />
+                <column name="ScenarioID" dataType="Integer" />
+                <column name="block_size" displayName="Block size" dataType="Integer" validationType="WholeNumber" validationCondition="None" isOptional="True" defaultValue="1" />
+                <column name="source_from_resistance" displayName="Source from resistance" dataType="Boolean" isOptional="True" defaultValue="0" />
+                <column name="resistance_is_conductance" displayName="Resistance is conductance" dataType="Boolean" isOptional="True" defaultValue="0" />
+                <column name="r_cutoff" displayName="R cutoff" dataType="Double" validationType="Decimal" validationCondition="None" isOptional="True" defaultValue="9999" />
+                <column name="buffer" displayName="Buffer" dataType="Integer" validationType="WholeNumber" validationCondition="None" isOptional="True" defaultValue="0" />
+                <column name="source_threshold" displayName="Source threshold" dataType="Double" validationType="Decimal" validationCondition="None" isOptional="True" defaultValue="0" />
+                <column name="calc_normalized_current" displayName="Calculate normalized current" dataType="Boolean" isOptional="True" defaultValue="0" />
+                <column name="calc_flow_potential" displayName="Calculate flow potential" dataType="Boolean" isOptional="True" defaultValue="0" />
+                <column name="allow_different_projections" displayName="Allow different projections" dataType="Boolean" isOptional="True" defaultValue="0" />
+                <column name="connect_four_neighbors_only" displayName="Connect four neighbors only" dataType="Boolean" isOptional="True" defaultValue="0" />
+                <column name="solver" displayName="Solver" dataType="String" isOptional="True" defaultValue="cg+amg" />
+              </columns>
+            </datasheet>
+          </datasheets>
+        </datafeed>
+        <datafeed name="ResistanceOptions" displayName="Resistance Reclassification" dataScope="Scenario">
+          <datasheets>
+            <datasheet name="ResistanceOptions" displayName="Resistance Reclassification" isSingleRow="True">
+              <columns>
+                <column name="ResistanceOptionsID" dataType="Integer" isPrimary="True" />
+                <column name="ScenarioID" dataType="Integer" />
+                <column name="reclassify_resistance" displayName="Reclassify resistance" dataType="Boolean" isOptional="True" defaultValue="0" />
+                <column name="reclass_table" displayName="Reclass table" dataType="String" isExternalFile="True" isOptional="True" />
+                <column name="write_reclassified_resistance" displayName="Write reclassified resistance" dataType="Boolean" isOptional="True" defaultValue="0" />
+              </columns>
+            </datasheet>
+          </datasheets>
+        </datafeed>
+        <datafeed name="OutputOptions" displayName="Output Options" dataScope="Scenario">
+          <datasheets>
+            <datasheet name="OutputOptions" displayName="Output Options" isSingleRow="True">
+              <columns>
+                <column name="OutputOptionsID" dataType="Integer" isPrimary="True" />
+                <column name="ScenarioID" dataType="Integer" />
+                <column name="write_raw_currmap" displayName="Write raw cumulative current map" dataType="Boolean" isOptional="True" defaultValue="1" />
+                <column name="mask_nodata" displayName="Mask nodata" dataType="Boolean" isOptional="True" defaultValue="1" />
+                <column name="write_as_tif" displayName="Write as tif" dataType="Boolean" isOptional="True" defaultValue="0" />
+              </columns>
+            </datasheet>
+          </datasheets>
+        </datafeed>
+        <datafeed name="ConditionalOptions" displayName="Options" dataScope="Scenario">
+          <datasheets>
+            <datasheet name="ConditionalOptions" displayName="Options" isSingleRow="True">
+              <columns>
+                <column name="ConditionalOptionsID" dataType="Integer" isPrimary="True" />
+                <column name="ScenarioID" dataType="Integer" />
+                <column name="conditional" displayName="Conditional" dataType="Boolean" isOptional="True" defaultValue="0" />
+                <column name="n_conditions" displayName="Number of conditions" dataType="String" isOptional="True" defaultValue="1" />
+              </columns>
+            </datasheet>
+          </datasheets>
+        </datafeed>
+        <datafeed name="Condition1" displayName="Condition 1" dataScope="Scenario">
+          <datasheets>
+            <datasheet name="Condition1" displayName="Condition 1" isSingleRow="True">
+              <columns>
+                <column name="Condition1ID" dataType="Integer" isPrimary="True" />
+                <column name="ScenarioID" dataType="Integer" />
+                <column name="condition1_file" displayName="Condition 1 file" dataType="String" isExternalFile="True" externalFileFilter="GeoTIFF Files (*.tif)|*.tif|All Files (*.*)|*.*" isRaster="True" isOptional="True" />
+                <column name="comparison1" displayName="Comparison 1" dataType="String" isOptional="True" defaultValue="within" />
+                <column name="condition1_lower" displayName="Condition 1 lower" dataType="Double" validationType="Decimal" validationCondition="None" isOptional="True" />
+                <column name="condition1_upper" displayName="Condition 1 upper" dataType="Double" validationType="Decimal" validationCondition="None" isOptional="True" />
+              </columns>
+            </datasheet>
+          </datasheets>
+        </datafeed>
+        <datafeed name="Condition2" displayName="Condition 2" dataScope="Scenario">
+          <datasheets>
+            <datasheet name="Condition2" displayName="Condition 2" isSingleRow="True">
+              <columns>
+                <column name="Condition2ID" dataType="Integer" isPrimary="True" />
+                <column name="ScenarioID" dataType="Integer" />
+                <column name="condition2_file" displayName="Condition 2 file" dataType="String" isExternalFile="True" externalFileFilter="GeoTIFF Files (*.tif)|*.tif|All Files (*.*)|*.*" isRaster="True" isOptional="True" />
+                <column name="comparison2" displayName="Comparison 2" dataType="String" isOptional="True" defaultValue="within" />
+                <column name="condition2_lower" displayName="Condition 2 lower" dataType="Double" validationType="Decimal" validationCondition="None" isOptional="True" />
+                <column name="condition2_upper" displayName="Condition 2 upper" dataType="Double" validationType="Decimal" validationCondition="None" isOptional="True" />
+              </columns>
+            </datasheet>
+          </datasheets>
+        </datafeed>
+        <datafeed name="FutureConditions" displayName="Future Conditions" dataScope="Scenario">
+          <datasheets>
+            <datasheet name="FutureConditions" displayName="Future Conditions" isSingleRow="True">
+              <columns>
+                <column name="FutureConditionsID" dataType="Integer" isPrimary="True" />
+                <column name="ScenarioID" dataType="Integer" />
+                <column name="compare_to_future" displayName="Compare to future" dataType="String" isOptional="True" defaultValue="none" />
+                <column name="condition1_future_file" displayName="Condition 1 future file" dataType="String" isExternalFile="True" externalFileFilter="GeoTIFF Files (*.tif)|*.tif|All Files (*.*)|*.*" isRaster="True" isOptional="True" />
+                <column name="condition2_future_file" displayName="Condition 2 future file" dataType="String" isExternalFile="True" externalFileFilter="GeoTIFF Files (*.tif)|*.tif|All Files (*.*)|*.*" isRaster="True" isOptional="True" />
+              </columns>
+            </datasheet>
+          </datasheets>
+        </datafeed>
+        <datafeed name="Results" displayName="Results" dataScope="Scenario">
+          <datasheets>
+            <datasheet name="Results" displayName="Results" isSingleRow="True">
+              <columns>
+                <column name="ResultsID" dataType="Integer" isPrimary="True" />
+                <column name="ScenarioID" dataType="Integer" />
+                <column name="cum_currmap" displayName="Cumulative current flow" dataType="String" isExternalFile="True" externalFileFilter="GeoTIFF Files (*.tif)|*.tif|All Files (*.*)|*.*" isRaster="True" />
+                <column name="flow_potential" displayName="Flow potential" dataType="String" isExternalFile="True" externalFileFilter="GeoTIFF Files (*.tif)|*.tif|All Files (*.*)|*.*" isRaster="True" />
+                <column name="normalized_cum_currmap" displayName="Normalized current flow" dataType="String" isExternalFile="True" externalFileFilter="GeoTIFF Files (*.tif)|*.tif|All Files (*.*)|*.*" isRaster="True" />
+                <column name="classified_resistance" displayName="Classified resistance" dataType="String" isExternalFile="True" externalFileFilter="GeoTIFF Files (*.tif)|*.tif|All Files (*.*)|*.*" isRaster="True" />
+              </columns>
+            </datasheet>
+          </datasheets>
+        </datafeed>
+      </datafeeds>
+    </transformer>
+  </transformers>
+  <layouts>
+    <layout name="coreforms_LibraryDatafeeds">
+      <item name="core_Pyconfig" />
+      <item name="juliaConfiguration" />
+      <item name="core_Backup" />
+      <group name="Advanced">
+        <item name="core_Options" displayName="General" />
+        <item name="core_Multiprocessing" />
+        <item name="core_ProcessorGroup" />
+        <item name="corestime_Options" displayName="Spatial" />
+      </group>
+    </layout>
+    <layout name="coreforms_ScenarioDatafeeds">
+      <item name="Required" />
+      <group name="Optional" displayName="Optional">
+        <item name="GeneralOptions" />
+        <item name="ResistanceOptions" />
+        <item name="OutputOptions" />
+        <group name="Conditional0Connectivity" displayName="Conditional Connectivity">
+          <item name="ConditionalOptions" />
+          <item name="Condition1" />
+          <item name="Condition2" />
+          <item name="FutureConditions" />
+        </group>
+      </group>
+      <item name="Results" />
+    </layout>
+    <layout name="coreforms_ResultTransformers">
+      <item name="corestime_MapTransformer" />
+    </layout>
+    <layout name="corestimeforms_Maps">
+      <group name="Results" displayName="Results">
+        <item name="Results_cum_currmap" displayName="Cumulative current flow" dataSheet="Results" column="cum_currmap" />
+        <item name="Results_flow_potential" displayName="Flow potential" dataSheet="Results" column="flow_potential" />
+        <item name="Results_normalized_cum_currmap" displayName="Normalized current flow" dataSheet="Results" column="normalized_cum_currmap" />
+        <item name="Results_classified_resistance" displayName="Classified resistance" dataSheet="Results" column="classified_resistance" />
+      </group>
+    </layout>
+  </layouts>
+  <views />
+</package>
