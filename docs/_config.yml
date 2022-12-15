@@ -1,0 +1,8 @@
+title: omniscape
+theme: minima
+description: omniscape SyncroSim package
+author: Apex Resource Management Solutions
+email: info@apexrms.com
+header_pages:
+  - index.md
+  - getting_started.md
