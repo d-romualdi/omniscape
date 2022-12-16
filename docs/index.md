@@ -12,7 +12,9 @@ permalink: /
 
 ## Omni-directional habitat connectivity based on circuit theory
 
-The **omniscape** SyncroSim Package is an open-source [SyncroSim](https://syncrosim.com/){:target="_blank"} base package for running [Omniscape.jl](https://docs.circuitscape.org/Omniscape.jl/stable/){:target="_blank"} and calculating omni-directional habitat connectivity. The **omniscape** SyncroSim package provides flexible application programming interfaces to run Omniscape.jl, including a Windows user interface, an R package ([rsyncrosim](https://syncrosim.com/r-package/){:target="_blank"}) and Python package ([pysyncrosim](https://pysyncrosim.readthedocs.io/en/latest/){:target="_blank"}). For details on model parameters and configurations, see the [Omniscape.jl documentation](https://docs.circuitscape.org/Omniscape.jl/stable/usage/#Settings-and-Options){:target="_blank"}.
+The **omniscape** SyncroSim Package is an open-source [SyncroSim](https://syncrosim.com/){:target="_blank"} base package for running [Omniscape.jl](https://docs.circuitscape.org/Omniscape.jl/stable/){:target="_blank"} and calculating omni-directional habitat connectivity. 
+
+The **omniscape** SyncroSim Package allows users to run the full Omniscape.jl code without ever having to interact with Julia directly. Rather, through SyncroSim, users can interact with Omniscape.jl using either a Windows user interface or through scripts written in R (using [rsyncrosim](https://syncrosim.com/r-package/){:target="_blank"}) or Python (using [pysyncrosim](https://pysyncrosim.readthedocs.io/en/latest/){:target="_blank"}). For details on model parameters and configurations, see the [Omniscape.jl documentation](https://docs.circuitscape.org/Omniscape.jl/stable/usage/#Settings-and-Options){:target="_blank"}.
 
 <br> 
 

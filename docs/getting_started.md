@@ -6,7 +6,7 @@ permalink: /getting_started
 
 # Getting started with the **omniscape** SyncroSim Package
 
-### Here we provide guided tutorials on the **omniscape** SyncroSim Package, an open-source SyncroSim package for running Omniscape.jl. 
+### Here we provide guided tutorials on the **omniscape** SyncroSim Package, an open-source SyncroSim Package for running Omniscape.jl. 
 
 The tutorials will introduce you to the basics of working with the **omniscape** SyncroSim Package. The steps include:
 
