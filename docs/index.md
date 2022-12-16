@@ -12,9 +12,9 @@ permalink: /
 
 ## Omni-directional habitat connectivity based on circuit theory
 
-The **omniscape** package is an open-source [SyncroSim](https://syncrosim.com/){:target="_blank"} base package for running [Omniscape.jl](https://docs.circuitscape.org/Omniscape.jl/stable/){:target="_blank"} and calculating omni-directional habitat connectivity. The **omniscape** SyncroSim package provides a Windows user interface to run the Omniscape connectivity algorithm developed by [McRae et al. (2016)](https://www.conservationgateway.org/ConservationByGeography/NorthAmerica/UnitedStates/oregon/science/Documents/McRae_et_al_2016_PNW_CNS_Connectivity.pdf){:target="_blank"}. For details on model parameters and configurations, see the [Omniscape documentation](https://docs.circuitscape.org/Omniscape.jl/stable/usage/#Settings-and-Options){:target="_blank"}.
+The **omniscape** SyncroSim Package is an open-source [SyncroSim](https://syncrosim.com/){:target="_blank"} base package for running [Omniscape.jl](https://docs.circuitscape.org/Omniscape.jl/stable/){:target="_blank"} and calculating omni-directional habitat connectivity. The **omniscape** SyncroSim package provides flexible application programming interfaces to run Omniscape.jl, including a Windows user interface, an R package ([rsyncrosim](https://syncrosim.com/r-package/){:target="_blank"}) and Python package ([pysyncrosim](https://pysyncrosim.readthedocs.io/en/latest/){:target="_blank"}). For details on model parameters and configurations, see the [Omniscape.jl documentation](https://docs.circuitscape.org/Omniscape.jl/stable/usage/#Settings-and-Options){:target="_blank"}.
 
-<br>
+<br> 
 
 ## Requirements
 
@@ -22,13 +22,13 @@ The **omniscape** SyncroSim Package has two requirements:
 * SyncroSim [version 2.4.5](https://syncrosim.com/download/){:target="_blank"} or higher
 * Julia [version 1.5.4](https://julialang.org/downloads/){:target="_blank"} or higher
 
-> Instructions for installing the above requirements for **omniscape** are provided on the [Getting Started](https://apexrms.github.io/omniscape/getting_started.html) page.
+> Instructions for installing the above requirements for the **omniscape** SyncroSim Package are provided on the [Getting Started](https://apexrms.github.io/omniscape/getting_started.html) page.
 
 <br>
 
 ## Getting Started
 
-For a guided tutorial on **omniscape**, including installation, set up, model run, and output visualization, see [Getting Started](https://apexrms.github.io/omniscape/getting_started.html).
+For a guided tutorial on the **omniscape** SyncroSim Package, see the [Getting Started](https://apexrms.github.io/omniscape/getting_started.html) page.
 
 <br>
 
@@ -50,4 +50,4 @@ Bronwyn Rayfield (Author) <a href="https://orcid.org/0000-0003-1768-1300"><img a
 <br>
 Katie Birchard (Author)
 <br>
-Colin Daniels (Author) <a href="https://orcid.org/0000-0001-7367-2041"><img align="middle" style="padding: 0.5px" width="17" src="assets/images/ORCID.png"></a>
+Colin Daniel (Author) <a href="https://orcid.org/0000-0001-7367-2041"><img align="middle" style="padding: 0.5px" width="17" src="assets/images/ORCID.png"></a>
