@@ -36,8 +36,6 @@ The steps include:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/jnTltF54xFU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<br>
-
 > **Note:** Before running a scenario, you need to specify the path to the Julia executable file. To do so, open the Library Properties, and under the Julia Configuration datasheet, click on the import button to navigate to the Julia executable file. If in the default location, you will find it at C:\Users\User_Name\AppData\Local\Programs\Julia-1.8.2\bin\julia.exe. The AppData folder is sometimes hidden. To see it, in File explorer, select View > Show > Hidden items.
 
 <br>
