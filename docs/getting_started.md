@@ -38,6 +38,10 @@ The steps include:
 
 <br>
 
+> **Note:** Before running a scenario, you need to specify the path to the Julia executable file. To do so, open the Library Properties, and under the Julia Configuration datasheet, click on the import button to navigate to the Julia executable file. If in the default location, you will find it at C:\Users\User_Name\AppData\Local\Programs\Julia-1.8.2\bin\julia.exe. The AppData folder is sometimes hidden. To see it, in File explorer, select View > Show > Hidden items.
+
+<br>
+
 ## **Creating a reproducible workflow for the omniscape SyncroSim Package in R**
 
 This video tutorial will cover how to use the [rsyncrosim](https://syncrosim.github.io/rsyncrosim/){:target="_blank"} R package to interact with the **omniscape** SyncroSim Package in R.
