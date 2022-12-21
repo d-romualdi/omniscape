@@ -4,32 +4,32 @@ title: Getting started
 permalink: /getting_started
 ---
 
-# Getting started with the **omniscape** SyncroSim Package
+# Getting started with **omniscape** SyncroSim
 
-### Here we provide guided tutorials on the **omniscape** SyncroSim Package, an open-source SyncroSim Package for running Omniscape.jl. 
+### Here we provide guided tutorials on **omniscape** SyncroSim, an open-source SyncroSim base package for running Omniscape.jl. 
 
-The tutorials will introduce you to the basics of working with the **omniscape** SyncroSim Package. The steps include:
+The tutorials will introduce you to the basics of working with **omniscape** SyncroSim. The steps include:
 
 * Installing SyncroSim and Julia
-* Reproducing the Omniscape.jl example with the **omniscape** SyncroSim Package
-* Creating a reproducible workflow for the **omniscape** SyncroSim Package in R
+* Reproducing the Omniscape.jl example with **omniscape** SyncroSim
+* Creating a reproducible workflow for **omniscape** SyncroSim in R
 
 <br>
 
 ## **Installing SyncroSim and Julia**
 
-Running the **omniscape** SyncroSim Package requires that SyncroSim and Julia be installed on your computer. Download SyncroSim version 2.4.5 or higher [here](https://syncrosim.com/download/){:target="_blank"} and follow the installation prompts. Download Julia version 1.5.4 or higher [here](https://julialang.org/downloads/){:target="_blank"} and follow the installation prompts. Once these requirements are installed, you are ready to follow along with the tutorials.
+Running **omniscape** SyncroSim requires that SyncroSim and Julia be installed on your computer. Download SyncroSim version 2.4.5 or higher [here](https://syncrosim.com/download/){:target="_blank"} and follow the installation prompts. Download Julia version 1.5.4 or higher [here](https://julialang.org/downloads/){:target="_blank"} and follow the installation prompts. Once these requirements are installed, you are ready to follow along with the tutorials.
 
 <br>
 
-## **Reproducing the Omniscape.jl example with omniscape SyncroSim Package**
+## **Reproducing the Omniscape.jl example with omniscape SyncroSim**
 
-This video tutorial will provide an overview of working with the **omniscape** SyncroSim Package in the Windows user interface and demonstrate how to reproduce the [Omniscape.jl example](https://docs.circuitscape.org/Omniscape.jl/stable/examples/){:target="_blank"}. 
+This video tutorial will provide an overview of working with **omniscape** SyncroSim in the Windows user interface and demonstrate how to reproduce the [Omniscape.jl example](https://docs.circuitscape.org/Omniscape.jl/stable/examples/){:target="_blank"}. 
 
 The steps include:
 
-* Installing the **omniscape** SyncroSim Package
-* Creating and configuring a new the **omniscape** SyncroSim Library
+* Installing **omniscape** SyncroSim
+* Creating and configuring a new **omniscape** SyncroSim Library
 * Creating and editing scenarios
 * Running the model
 * Visualizing the results
@@ -40,9 +40,9 @@ The steps include:
 
 <br>
 
-## **Creating a reproducible workflow for the omniscape SyncroSim Package in R**
+## **Creating a reproducible workflow for omniscape SyncroSim in R**
 
-This video tutorial will cover how to use the [rsyncrosim](https://syncrosim.github.io/rsyncrosim/){:target="_blank"} R package to interact with the **omniscape** SyncroSim Package in R.
+This video tutorial will cover how to use the [rsyncrosim](https://syncrosim.github.io/rsyncrosim/){:target="_blank"} R package to interact with **omniscape** SyncroSim in R.
 
 If you'd like to follow along with the tutorial, download R and the R Studio IDE [here](https://posit.co/download/rstudio-desktop/){:target="_blank"} and follow the installation prompts.
 
