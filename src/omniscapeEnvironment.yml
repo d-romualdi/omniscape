@@ -81,7 +81,6 @@ dependencies:
   - python_abi=3.8=3_cp38
   - pytz=2022.6=pyhd8ed1ab_0
   - qhull=2020.2=h70d2c02_2
-  - rasterio=1.3.4=py38h533082a_0
   - setuptools=65.5.1=pyhd8ed1ab_0
   - six=1.16.0=pyh6c4a22f_0
   - snappy=1.1.9=hfb803bf_2
@@ -98,4 +97,5 @@ dependencies:
   - xz=5.2.6=h8d14728_0
   - zlib=1.2.13=hcfcfb64_4
   - zstd=1.5.2=h7755175_4
-prefix: C:\Users\CarinaFirkowski\miniconda3\envs\omnienv
+  - pip:
+      - git+https://github.com/ApexRMS/rasterio.git#egg=rasterio[complete]
