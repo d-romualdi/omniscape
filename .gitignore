@@ -9,3 +9,6 @@ _site
 .jekyll-metadata
 vendor
 
+# Package development & previous package versions
+design
+omniscape
