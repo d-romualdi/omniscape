@@ -44,9 +44,11 @@ The steps include:
 
 This video tutorial will cover how to use the [rsyncrosim](https://syncrosim.github.io/rsyncrosim/){:target="_blank"} R package to interact with **omniscape** SyncroSim in R.
 
-If you'd like to follow along with the tutorial, download R and the R Studio IDE [here](https://posit.co/download/rstudio-desktop/){:target="_blank"} and follow the installation prompts. If you are using omniscape with conda turned on, you must install [rsyncrosim](https://syncrosim.github.io/rsyncrosim/){:target="_blank"} [version 1.4.4](https://github.com/syncrosim/rsyncrosim/releases){:target="_blank"} or higher from GitHub.
+If you'd like to follow along with the tutorial, download R and the R Studio IDE [here](https://posit.co/download/rstudio-desktop/){:target="_blank"} and follow the installation prompts. 
 
-The steps include:
+> **Note:** If you are running **omniscape** using Conda, you must install [rsyncrosim](https://syncrosim.github.io/rsyncrosim/){:target="_blank"} [version 1.4.4](https://github.com/syncrosim/rsyncrosim/releases){:target="_blank"} or higher from GitHub.
+
+The topics covered in the video tutorial include:
 * Reproducing the Omniscape.jl example in R using rsyncrosim
 * Performing a sensitivity analysis on an **omniscape** SyncroSim parameter
 
