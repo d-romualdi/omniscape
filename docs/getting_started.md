@@ -46,7 +46,8 @@ This video tutorial will cover how to use the [rsyncrosim](https://syncrosim.git
 
 If you'd like to follow along with the tutorial, download R and the R Studio IDE [here](https://posit.co/download/rstudio-desktop/){:target="_blank"} and follow the installation prompts. 
 
-> **Note:** If you are running **omniscape** using Conda, you must install [rsyncrosim](https://syncrosim.github.io/rsyncrosim/){:target="_blank"} [version 1.4.4](https://github.com/syncrosim/rsyncrosim/releases){:target="_blank"} or higher from GitHub.
+> **Note:** If you are running **omniscape** using Conda, you must install rsyncrosim [version 1.4.4](https://github.com/syncrosim/rsyncrosim/releases){:target="_blank"} or higher from GitHub.
+
 
 The topics covered in the video tutorial include:
 * Reproducing the Omniscape.jl example in R using rsyncrosim
