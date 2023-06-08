@@ -1,21 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<package name="omniscape" displayName="Omni-directional habitat connectivity based on circuit theory" version="1.0.1">
+<package name="omniscape" displayName="Omni-directional habitat connectivity based on circuit theory" version="1.0.2">
   <transformers>
-    <transformer name="omniscapeTransformer" isPrimary="True" transformerSpecificOutput="False" programName="python" programArguments="omniscapeTransformer.py" condaEnv="omniscapeEnvironment.yml">
+    <transformer name="omniscapeTransformer" isPrimary="True" isPipelineBased="True" transformerSpecificOutput="False" isRunnable="True" programName="python" programArguments="omniscapeTransformer.py" condaEnv="omniscapeEnvironment.yml">
       <include>
         <transformer name="corestime_Runtime" />
       </include>
       <datafeeds>
-        <datafeed name="juliaConfiguration" displayName="Julia Configuration" dataScope="Library">
-          <datasheets>
-            <datasheet name="juliaConfiguration" displayName="Julia Configuration" isSingleRow="True">
-              <columns>
-                <column name="juliaConfigurationID" dataType="Integer" isPrimary="True" />
-                <column name="julia_path" displayName="Julia executable" dataType="String" allowDbNull="False" isExternalFile="True" externalFileFilter="Julia |julia.exe" externalFileAbsolute="True" />
-              </columns>
-            </datasheet>
-          </datasheets>
-        </datafeed>
         <datafeed name="Required" displayName="Required" dataScope="Scenario">
           <datasheets>
             <datasheet name="Required" displayName="Required" isSingleRow="True">
@@ -25,6 +15,16 @@
                 <column name="resistance_file" displayName="Resistance file" dataType="String" isExternalFile="True" externalFileFilter="GeoTIFF Files (*.tif)|*.tif|All Files (*.*)|*.*" isRaster="True" />
                 <column name="radius" displayName="Radius" dataType="Integer" validationType="WholeNumber" validationCondition="None" />
                 <column name="source_file" displayName="Source file" dataType="String" isExternalFile="True" externalFileFilter="GeoTIFF Files (*.tif)|*.tif|All Files (*.*)|*.*" isRaster="True" />
+              </columns>
+            </datasheet>
+          </datasheets>
+        </datafeed>
+        <datafeed name="juliaConfiguration" displayName="Julia Configuration" dataScope="Library">
+          <datasheets>
+            <datasheet name="juliaConfiguration" displayName="Julia Configuration" isSingleRow="True">
+              <columns>
+                <column name="juliaConfigurationID" dataType="Integer" isPrimary="True" />
+                <column name="julia_path" displayName="Julia executable" dataType="String" allowDbNull="False" isExternalFile="True" externalFileFilter="Julia |julia.exe" externalFileAbsolute="True" />
               </columns>
             </datasheet>
           </datasheets>
@@ -148,8 +148,8 @@
   </transformers>
   <layouts>
     <layout name="coreforms_LibraryDatafeeds">
-      <item name="core_Pyconfig" />
       <item name="juliaConfiguration" />
+      <item name="core_Pyconfig" />
       <item name="core_Backup" />
       <group name="Advanced">
         <item name="core_Options" displayName="General" />
