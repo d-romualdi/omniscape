@@ -1,0 +1,10 @@
+# Syncrosim Generated Cross-category difference Color Map (QGIS-compatible),,,,,
+INTERPOLATION:DISCRETE
+0.0000,240,240,240,255,No change
+1.0000,100,253,106,255,1 category gain
+-1.0000,254,153,44,255,1 category loss
+2.0000,27,208,213,255,2 category gain
+-2.0000,217,56,7,255,2 category loss
+3.0000,71,119,239,255,3 category gain
+-3.0000,122,4,3,255,3 category loss
+-9999.0000,192,192,192,255,No data

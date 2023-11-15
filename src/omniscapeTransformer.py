@@ -1,9 +1,12 @@
+## omniscape
+
 # Set up -----------------------------------------------------------------------
 
 import pysyncrosim as ps
 import pandas as pd
 import sys
 import os
+import rasterio
 
 ps.environment.progress_bar(message="Setting up Scenario", report_type="message")
 
@@ -25,8 +28,10 @@ dataPath = os.path.join(e.input_directory.item(), "Scenario-" + repr(myScenarioI
 # Load input and settings from SyncroSim Library ------------------------------- 
 
 requiredData = myScenario.datasheets(name = "omniscape_Required")
+requiredDataValidation = myScenario.datasheets(name = "omniscape_Required", show_full_paths=True)
 generalOptions = myScenario.datasheets(name = "omniscape_GeneralOptions")
 resistanceOptions = myScenario.datasheets(name = "omniscape_ResistanceOptions")
+reclassTable = myScenario.datasheets(name = "omniscape_ReclassTable")
 condition1 = myScenario.datasheets(name = "omniscape_Condition1")
 condition2 = myScenario.datasheets(name = "omniscape_Condition2")
 conditionalOptions = myScenario.datasheets(name = "omniscape_ConditionalOptions")
@@ -81,9 +86,6 @@ if resistanceOptions.reclassify_resistance.empty:
 if resistanceOptions.reclassify_resistance.item() == "No":
     resistanceOptions.reclass_table = pd.Series("None")
 
-if resistanceOptions.reclass_table[0] == resistanceOptions.reclass_table[0]:
-    resistanceOptions.reclass_table = pd.Series(os.path.join(dataPath, "omniscape_ResistanceOptions", resistanceOptions.reclass_table[0]))
-
 if resistanceOptions.write_reclassified_resistance[0] != resistanceOptions.write_reclassified_resistance[0]:
     resistanceOptions.write_reclassified_resistance = pd.Series("Yes")
 
@@ -130,19 +132,35 @@ if outputOptions.write_as_tif[0] != outputOptions.write_as_tif[0]:
 if juliaConfig.julia_path.empty:
     sys.exit("A julia executable is required.")
 
+if ' ' in juliaConfig.julia_path[0]:
+    sys.exit("The path to the julia executable may not contains spaces.")
+
 if requiredData.resistance_file[0] != requiredData.resistance_file[0]:
     sys.exit("'Resistance file' is required.")
 
 if requiredData.radius[0] != requiredData.radius[0]:
     sys.exit("'Radius' is required.")
 
-if generalOptions.source_from_resistance[0] == "No" and requiredData.source_file[0] != requiredData.source_file[0]:
+if generalOptions.source_from_resistance[0] == "No" and requiredData.source_file[0] == "None":
     sys.exit("'Source from resistance' was set to 'No', therefore 'Source file' is required.")
 
-if not resistanceOptions.empty:
-    if resistanceOptions.reclassify_resistance[0] == "Yes" and resistanceOptions.reclass_table[0] != resistanceOptions.reclass_table[0]:
-        sys.exit("'Reclassify resistance' was set to 'Yes', therefore 'Reclass table' is required.")
+if generalOptions.source_from_resistance[0] == "No" and requiredDataValidation.source_file[0] == requiredDataValidation.source_file[0]:
+    resistanceLayer = rasterio.open(requiredDataValidation.resistance_file[0])
+    sourceLayer = rasterio.open(requiredDataValidation.source_file[0])
+    if resistanceLayer.crs != sourceLayer.crs:
+        sys.exit("'Resistance file' and 'Source file' must have the same Coordinate Reference System.")
+    if resistanceLayer.bounds != sourceLayer.bounds:
+        sys.exit("'Resistance file' and 'Source file' must have the same raster extent.")
 
+if not resistanceOptions.empty:
+    if resistanceOptions.reclassify_resistance[0] == "Yes":
+        if reclassTable.empty:
+            sys.exit("'Reclassify resistance' was set to 'Yes', therefore 'Reclass Table' is required.")
+        if reclassTable['land_cover'].isnull().values.any():
+            sys.exit("'Reclass Table' has NaN values for 'Land cover class'.")
+        if reclassTable['resistance_value'].isnull().values.any():
+            sys.exit("'Reclass Table' has NaN values for 'Resistance value'. If necessary, NaN values should be specified as -9999.")
+    
 if not conditionalOptions.empty:
     if conditionalOptions.conditional[0] == "Yes" and conditionalOptions.n_conditions[0] == "1" and condition1.condition1_file[0] != condition1.condition1_file[0]:
         sys.exit("'Conditional' was set to 'Yes' and 'Number of conditions' was set to 1, therefore 'Condition 1 file' is required.")
@@ -162,7 +180,7 @@ if not futureConditions.empty:
         sys.exit("'Compare to future' was set to 'both', therefore 'Condition 1 future file' and 'Condition 2 future file' are required.")
 
 
- 
+
 # Change "Yes" and "No" to "true" and "false" ----------------------------------
 
 generalOptions = generalOptions.replace({'Yes': 'true', 'No': 'false'})
@@ -173,6 +191,19 @@ multiprocessing = multiprocessing.replace({'Yes': 'true', 'No': 'false'})
 
 
 
+# Prepare reclass file ---------------------------------------------------------
+
+if not reclassTable.empty:
+    reclassTablePath = os.path.join(dataPath, "omniscape_ResistanceOptions")
+    if os.path.exists(reclassTablePath) == False:
+        os.mkdir(reclassTablePath)
+    reclassTable.loc[reclassTable["resistance_value"] == -9999, "resistance_value"] = "missing"
+    with open(os.path.join(reclassTablePath, "reclass_table.txt"), "w") as f:
+        file = reclassTable.to_string(header=False, index=False)
+        f.write(file)
+else:
+    reclassTablePath = "None"
+
 # Prepare configuration file (.ini) --------------------------------------------
 
 file = open(os.path.join(dataPath, "omniscape_Required", "config.ini"), "w")
@@ -180,14 +211,14 @@ file.write(
     "[Required]" + "\n"
     "resistance_file = " + os.path.join(dataPath, "omniscape_Required", requiredData.resistance_file[0]) + "\n"
     "radius = " + repr(requiredData.radius[0]) + "\n"
-    "project_name = " + os.path.join(wrkDir, "Scenario-" + repr(myScenarioID), "omniscape_Results") + "\n"
+    "project_name = " + os.path.join(wrkDir, "Scenario-" + repr(myScenarioID), "omniscape_outputSpatial") + "\n"
     "source_file = " + requiredData.source_file[0] + "\n"
     "\n"
     "[General Options]" + "\n"
     "block_size = " + repr(generalOptions.block_size[0]) + "\n"
     "source_from_resistance = " + generalOptions.source_from_resistance[0] + "\n"
     "resistance_is_conductance = " + generalOptions.resistance_is_conductance[0] + "\n"
-    "r_cutoff = " + repr(generalOptions.r_cutoff[0]) + "\n"
+    "r_cutoff = 1" + "\n"
     "buffer = " + repr(generalOptions.buffer[0]) + "\n"
     "source_threshold = " + repr(generalOptions.source_threshold[0]) + "\n"
     "calc_normalized_current = " + generalOptions.calc_normalized_current[0] + "\n"
@@ -198,7 +229,7 @@ file.write(
     "\n"
     "[Resistance Reclassification]" + "\n"
     "reclassify_resistance = " + resistanceOptions.reclassify_resistance[0] + "\n"
-    "reclass_table = " + resistanceOptions.reclass_table[0] + "\n"
+    "reclass_table = " + os.path.join(reclassTablePath, "reclass_table.txt") + "\n"
     "write_reclassified_resistance = " + resistanceOptions.write_reclassified_resistance[0] + "\n"
     "\n"
     "[Conditional Connectivity]" + "\n"
@@ -237,7 +268,7 @@ file = open(os.path.join(dataPath, "omniscape_Required", "runOmniscape.jl"), "w"
 file.write(
     "cd(raw\"" + os.path.join(dataPath, "omniscape_Required") + "\")" + "\n"
     "\n"
-    "using Pkg; Pkg.add(\"Omniscape\")" + "\n"
+    "using Pkg; Pkg.add(name=\"Omniscape\", version=\"0.5.7\")" + "\n"
     "using Omniscape" + "\n"
     "run_omniscape(\"" + configName + "\")"
 )
@@ -249,9 +280,11 @@ file.close()
 
 ps.environment.progress_bar(message="Running Omniscape", report_type="message")
 
-#jlExe = "C:\\Users\\CarinaFirkowski\\AppData\\Local\\Programs\\Julia-1.8.2\\bin\\julia.exe"
 jlExe = juliaConfig.julia_path[0]
 runFile = os.path.join(dataPath, "omniscape_Required", "runOmniscape.jl")
+
+if ' ' in dataPath:
+    sys.exit("Due to julia requirements, the path to the SyncroSim Library may not contain any spaces.")
 
 runOmniscape = jlExe + " " + runFile
 
@@ -261,20 +294,26 @@ os.system(runOmniscape)
 
 # Create output datasheets ----------------------------------------------------------------------
 
-myOutput = myScenario.datasheets(name = "omniscape_Results")
+myOutput = myScenario.datasheets(name = "omniscape_outputSpatial")
 
 if outputOptions.write_raw_currmap[0] == "true":
-    myOutput.cum_currmap = pd.Series(os.path.join(wrkDir, "Scenario-" + repr(myScenarioID), "omniscape_Results", "cum_currmap.tif"))
+    myOutput.cum_currmap = pd.Series(os.path.join(wrkDir, "Scenario-" + repr(myScenarioID), "omniscape_outputSpatial", "cum_currmap.tif"))
 
 if generalOptions.calc_flow_potential[0] == "true":
-    myOutput.flow_potential = pd.Series(os.path.join(wrkDir, "Scenario-" + repr(myScenarioID), "omniscape_Results", "flow_potential.tif"))
+    myOutput.flow_potential = pd.Series(os.path.join(wrkDir, "Scenario-" + repr(myScenarioID), "omniscape_outputSpatial", "flow_potential.tif"))
 
 if generalOptions.calc_normalized_current[0] == "true":
-    myOutput.normalized_cum_currmap = pd.Series(os.path.join(wrkDir, "Scenario-" + repr(myScenarioID), "omniscape_Results", "normalized_cum_currmap.tif"))
+    myOutput.normalized_cum_currmap = pd.Series(os.path.join(wrkDir, "Scenario-" + repr(myScenarioID), "omniscape_outputSpatial", "normalized_cum_currmap.tif"))
 
-if resistanceOptions.write_reclassified_resistance[0] == "true":
-    myOutput.classified_resistance = pd.Series(os.path.join(wrkDir, "Scenario-" + repr(myScenarioID), "omniscape_Results", "classified_resistance.tif"))
+if (os.path.isfile(os.path.join(wrkDir, "Scenario-" + repr(myScenarioID), "omniscape_outputSpatial", "classified_resistance.tif"))) & (resistanceOptions.write_reclassified_resistance[0] == "true"):
+    myOutput.classified_resistance = pd.Series(os.path.join(wrkDir, "Scenario-" + repr(myScenarioID), "omniscape_outputSpatial", "classified_resistance.tif"))
+else:
+    myOutput.classified_resistance = pd.Series(requiredDataValidation.resistance_file[0])
 
-myParentScenario.save_datasheet(name = "omniscape_Results", data = myOutput)
+
+
+# Save outputs to SyncroSim ---------------------------------------------------------------------
+
+myParentScenario.save_datasheet(name = "omniscape_outputSpatial", data = myOutput)
 
 

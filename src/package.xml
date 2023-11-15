@@ -1,8 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
-<package name="omniscape" displayName="Omni-directional habitat connectivity based on circuit theory" version="1.0.2">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package name="omniscape" displayName="Omni-directional habitat connectivity based on circuit theory" url="https://apexrms.github.io/omniscape/" version="1.1.0">
   <transformers>
-    <transformer name="omniscapeTransformer" isPrimary="True" isPipelineBased="True" transformerSpecificOutput="False" isRunnable="True" programName="python" programArguments="omniscapeTransformer.py" condaEnv="omniscapeEnvironment.yml">
+    <transformer name="Primary" isPrimary="True" isPipelineBased="True">
       <include>
+        <transformer name="omniscapeTransformer" />
+        <transformer name="movementCategoriesTransformer" />
         <transformer name="corestime_Runtime" />
       </include>
       <datafeeds>
@@ -19,12 +21,25 @@
             </datasheet>
           </datasheets>
         </datafeed>
+        <datafeed name="movementTypes" displayName="Connectivity Categories" dataScope="Project">
+          <datasheets>
+            <datasheet name="movementTypes" displayName="Connectivity Categories" valueMember="movementTypesID" displayMember="Name">
+              <columns>
+                <column name="movementTypesID" dataType="Integer" isPrimary="True" />
+                <column name="ProjectID" dataType="Integer" />
+                <column name="Name" dataType="String" />
+                <column name="classID" displayName="Category ID" dataType="Integer" validationType="WholeNumber" validationCondition="None" />
+                <column name="Description" dataType="String" isOptional="True" />
+              </columns>
+            </datasheet>
+          </datasheets>
+        </datafeed>
         <datafeed name="juliaConfiguration" displayName="Julia Configuration" dataScope="Library">
           <datasheets>
             <datasheet name="juliaConfiguration" displayName="Julia Configuration" isSingleRow="True">
               <columns>
                 <column name="juliaConfigurationID" dataType="Integer" isPrimary="True" />
-                <column name="julia_path" displayName="Julia executable" dataType="String" allowDbNull="False" isExternalFile="True" externalFileFilter="Julia |julia.exe" externalFileAbsolute="True" />
+                <column name="julia_path" displayName="Julia executable" dataType="String" isExternalFile="True" allowDbNull="False" externalFileAbsolute="True" />
               </columns>
             </datasheet>
           </datasheets>
@@ -50,15 +65,26 @@
             </datasheet>
           </datasheets>
         </datafeed>
-        <datafeed name="ResistanceOptions" displayName="Resistance Reclassification" dataScope="Scenario">
+        <datafeed name="ResistanceOptions" displayName="Options" dataScope="Scenario">
           <datasheets>
-            <datasheet name="ResistanceOptions" displayName="Resistance Reclassification" isSingleRow="True">
+            <datasheet name="ResistanceOptions" displayName="Options" isSingleRow="True">
               <columns>
                 <column name="ResistanceOptionsID" dataType="Integer" isPrimary="True" />
                 <column name="ScenarioID" dataType="Integer" />
                 <column name="reclassify_resistance" displayName="Reclassify resistance" dataType="Boolean" isOptional="True" defaultValue="0" />
-                <column name="reclass_table" displayName="Reclass table" dataType="String" isExternalFile="True" isOptional="True" />
                 <column name="write_reclassified_resistance" displayName="Write reclassified resistance" dataType="Boolean" isOptional="True" defaultValue="0" />
+              </columns>
+            </datasheet>
+          </datasheets>
+        </datafeed>
+        <datafeed name="ReclassTable" displayName="Reclass Table" dataScope="Scenario">
+          <datasheets>
+            <datasheet name="ReclassTable" displayName="Reclass Table">
+              <columns>
+                <column name="ReclassTableID" dataType="Integer" isPrimary="True" />
+                <column name="ScenarioID" dataType="Integer" isCompositeIndex="True" />
+                <column name="land_cover" displayName="Land cover class" dataType="Integer" validationType="WholeNumber" validationCondition="None" />
+                <column name="resistance_value" displayName="Resistance value" dataType="Double" validationType="Decimal" validationCondition="None" />
               </columns>
             </datasheet>
           </datasheets>
@@ -129,11 +155,24 @@
             </datasheet>
           </datasheets>
         </datafeed>
-        <datafeed name="Results" displayName="Results" dataScope="Scenario">
+        <datafeed name="reclassificationThresholds" displayName="Category Thresholds" dataScope="Scenario">
           <datasheets>
-            <datasheet name="Results" displayName="Results" isSingleRow="True">
+            <datasheet name="reclassificationThresholds" displayName="Category Thresholds">
               <columns>
-                <column name="ResultsID" dataType="Integer" isPrimary="True" />
+                <column name="reclassificationThresholdsID" dataType="Integer" isPrimary="True" />
+                <column name="ScenarioID" dataType="Integer" isCompositeIndex="True" />
+                <column name="movementType" displayName="Connectivity category" dataType="Integer" validationType="Datasheet" formula1="movementTypes" />
+                <column name="minValue" displayName="Minimum value" dataType="Double" validationType="Decimal" validationCondition="None" />
+                <column name="maxValue" displayName="Maximum value" dataType="Double" validationType="Decimal" validationCondition="None" />
+              </columns>
+            </datasheet>
+          </datasheets>
+        </datafeed>
+        <datafeed name="outputSpatial" displayName="Omniscape Outputs" dataScope="Scenario">
+          <datasheets>
+            <datasheet name="outputSpatial" displayName="Omniscape Outputs" isSingleRow="True">
+              <columns>
+                <column name="outputSpatialID" dataType="Integer" isPrimary="True" />
                 <column name="ScenarioID" dataType="Integer" />
                 <column name="cum_currmap" displayName="Cumulative current flow" dataType="String" isExternalFile="True" externalFileFilter="GeoTIFF Files (*.tif)|*.tif|All Files (*.*)|*.*" isRaster="True" />
                 <column name="flow_potential" displayName="Flow potential" dataType="String" isExternalFile="True" externalFileFilter="GeoTIFF Files (*.tif)|*.tif|All Files (*.*)|*.*" isRaster="True" />
@@ -143,47 +182,117 @@
             </datasheet>
           </datasheets>
         </datafeed>
+        <datafeed name="outputSpatialMovement" displayName="Connectivity Categories" dataScope="Scenario">
+          <datasheets>
+            <datasheet name="outputSpatialMovement" displayName="Connectivity Categories" isSingleRow="True">
+              <columns>
+                <column name="outputSpatialMovementID" dataType="Integer" isPrimary="True" />
+                <column name="ScenarioID" dataType="Integer" />
+                <column name="movement_types" displayName="Connectivity categories" dataType="String" isExternalFile="True" externalFileFilter="GeoTIFF Files (*.tif)|*.tif|All Files (*.*)|*.*" isRaster="True" />
+              </columns>
+            </datasheet>
+          </datasheets>
+        </datafeed>
+        <datafeed name="outputTabularReclassification" displayName="Connectivity Categories Summary" dataScope="Scenario">
+          <datasheets>
+            <datasheet name="outputTabularReclassification" displayName="Connectivity Categories Summary">
+              <columns>
+                <column name="outputTabularReclassificationID" dataType="Integer" isPrimary="True" />
+                <column name="ScenarioID" dataType="Integer" isCompositeIndex="True" />
+                <column name="movementTypesID" displayName="Connectivity category" dataType="Integer" validationType="Datasheet" formula1="movementTypes" allowDbNull="False" />
+                <column name="amountArea" displayName="Area" dataType="Double" validationType="Decimal" validationCondition="None" />
+                <column name="percentCover" displayName="Percent cover" dataType="Double" validationType="Decimal" validationCondition="None" />
+              </columns>
+            </datasheet>
+          </datasheets>
+        </datafeed>
       </datafeeds>
+    </transformer>
+    <transformer name="omniscapeTransformer" displayName="1 - Omniscape" transformerSpecificOutput="False" isRunnable="True" programName="python" programArguments="omniscapeTransformer.py" condaEnv="omniscapeEnvironment.yml">
+      <pipeline>
+        <datafeed name="ResistanceOptions" type="Input" />
+        <datafeed name="Required" type="Input" />
+        <datafeed name="outputSpatial" type="Output" />
+        <datafeed name="OutputOptions" type="Input" />
+        <datafeed name="GeneralOptions" type="Input" />
+        <datafeed name="FutureConditions" type="Input" />
+        <datafeed name="ConditionalOptions" type="Input" />
+        <datafeed name="Condition2" type="Input" />
+        <datafeed name="Condition1" type="Input" />
+        <datafeed name="ReclassTable" type="Input" />
+      </pipeline>
+    </transformer>
+    <transformer name="movementCategoriesTransformer" displayName="2 - Categorize Connectivity Output" transformerSpecificOutput="False" isRunnable="True" programName="python" programArguments="movementCategoriesTransformer.py" condaEnv="omniscapeEnvironment.yml">
+      <pipeline>
+        <datafeed name="reclassificationThresholds" type="Input" />
+        <datafeed name="outputTabularReclassification" type="Output" />
+        <datafeed name="outputSpatialMovement" type="Output" />
+        <datafeed name="outputSpatial" type="Input" />
+      </pipeline>
     </transformer>
   </transformers>
   <layouts>
     <layout name="coreforms_LibraryDatafeeds">
-      <item name="juliaConfiguration" />
-      <item name="core_Pyconfig" />
+      <item name="juliaConfiguration" showIf="inPipeline" />
       <item name="core_Backup" />
-      <group name="Advanced">
+      <group name="Options">
         <item name="core_Options" displayName="General" />
-        <item name="core_Multiprocessing" />
-        <item name="core_ProcessorGroup" />
-        <item name="corestime_Options" displayName="Spatial" />
+        <item name="core_Pyconfig" />
       </group>
+    </layout>
+    <layout name="coreforms_ProjectDatafeeds">
+      <item name="movementTypes" showIf="inPipeline" />
     </layout>
     <layout name="coreforms_ScenarioDatafeeds">
-      <item name="Required" />
+      <item name="Required" showIf="inPipeline" />
       <group name="Optional" displayName="Optional">
-        <item name="GeneralOptions" />
-        <item name="ResistanceOptions" />
-        <item name="OutputOptions" />
+        <item name="GeneralOptions" showIf="inPipeline" />
+        <group name="Resistance0Reclassification" displayName="Resistance Reclassification">
+          <item name="ResistanceOptions" showIf="inPipeline" />
+          <item name="ReclassTable" showIf="inPipeline" />
+        </group>
+        <item name="OutputOptions" showIf="inPipeline" />
         <group name="Conditional0Connectivity" displayName="Conditional Connectivity">
-          <item name="ConditionalOptions" />
-          <item name="Condition1" />
-          <item name="Condition2" />
-          <item name="FutureConditions" />
+          <item name="ConditionalOptions" showIf="inPipeline" />
+          <item name="Condition1" showIf="inPipeline" />
+          <item name="Condition2" showIf="inPipeline" />
+          <item name="FutureConditions" showIf="inPipeline" />
         </group>
       </group>
-      <item name="Results" />
+      <group name="Advanced" displayName="Advanced">
+        <item name="reclassificationThresholds" showIf="inPipeline" />
+      </group>
+      <group name="Results" displayName="Results">
+        <group name="Spatial" displayName="Spatial">
+          <item name="outputSpatial" showIf="inPipeline" />
+          <item name="outputSpatialMovement" showIf="inPipeline" />
+        </group>
+        <group name="Tabular" displayName="Tabular">
+          <item name="outputTabularReclassification" showIf="inPipeline" />
+        </group>
+      </group>
     </layout>
     <layout name="coreforms_ResultTransformers">
+      <item name="corestime_ChartTransformer" />
       <item name="corestime_MapTransformer" />
     </layout>
+    <layout name="corestimeforms_Charts">
+      <group name="Connectivitycategories" displayName="Connectivity categories">
+        <item name="outputTabularReclassification_amountArea" displayName="Area (ha)" dataSheet="outputTabularReclassification" column="amountArea" filter="movementTypesID" prefixFolderName="False" />
+        <item name="outputTabularReclassification_percentCover" displayName="Percent cover" dataSheet="outputTabularReclassification" column="percentCover" filter="movementTypesID" prefixFolderName="False" />
+      </group>
+    </layout>
     <layout name="corestimeforms_Maps">
-      <group name="Results" displayName="Results">
-        <item name="Results_cum_currmap" displayName="Cumulative current flow" dataSheet="Results" column="cum_currmap" />
-        <item name="Results_flow_potential" displayName="Flow potential" dataSheet="Results" column="flow_potential" />
-        <item name="Results_normalized_cum_currmap" displayName="Normalized current flow" dataSheet="Results" column="normalized_cum_currmap" />
-        <item name="Results_classified_resistance" displayName="Classified resistance" dataSheet="Results" column="classified_resistance" />
+      <group name="Inputs" displayName="Inputs">
+        <item name="Required_source_file" displayName="Sources" dataSheet="Required" column="source_file" />
+        <item name="outputSpatial_classified_resistance" displayName="Resistance" dataSheet="outputSpatial" column="classified_resistance" />
+      </group>
+      <group name="Outputs" displayName="Outputs">
+        <item name="outputSpatial_cum_currmap" displayName="Cumulative current flow" dataSheet="outputSpatial" column="cum_currmap" />
+        <item name="outputSpatial_flow_potential" displayName="Flow potential" dataSheet="outputSpatial" column="flow_potential" />
+        <item name="outputSpatial_normalized_cum_currmap" displayName="Normalized current flow" dataSheet="outputSpatial" column="normalized_cum_currmap" />
+        <item name="outputSpatialMovement_movement_types" displayName="Connectivity categories" dataSheet="outputSpatialMovement" column="movement_types" />
       </group>
     </layout>
   </layouts>
-  <views />
 </package>

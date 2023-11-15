@@ -1,0 +1,6 @@
+# Syncrosim Generated 4 - Channelized Color Map (QGIS-compatible),,,,,
+INTERPOLATION:DISCRETE
+0.0000,240,240,240,255,No change
+1.0000,27,208,213,255,Gain
+-1.0000,217,56,7,255,Loss
+-9999.0000,192,192,192,255,No data
