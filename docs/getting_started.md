@@ -6,53 +6,43 @@ permalink: /getting_started
 
 # Getting started with **omniscape** SyncroSim
 
-### Here we provide guided tutorials on **omniscape** SyncroSim, an open-source SyncroSim base package for running Omniscape.jl. 
+To get started working with **omniscape** SyncroSim, begin by:
+<A href="#installing-syncrosim-and-julia">1. Installing SyncroSim and Julia</A>
+<A href="#installing-the-omniscape-syncrosim-package">2. Installing the **omniscape** SyncroSim package</A>
 
-The tutorials will introduce you to the basics of working with **omniscape** SyncroSim. The steps include:
-
-* Installing SyncroSim and Julia
-* Reproducing the Omniscape.jl example with **omniscape** SyncroSim
-* Creating a reproducible workflow for **omniscape** SyncroSim in R
+Once these requirements have been installed, the following tutorials cover the basics of the **omniscape** SyncroSim package:
+<A href="#reproducing-the-omniscape.jl-example-with-omniscape-syncrosim">1. Reproducing the Omniscape.jl example with **omniscape** SyncroSim</A> #zzz: fix link
+<A href="#measuring-the-impact-of-connectivity-change-with-omniscapeimpact">2. Measuring the impact of connectivity change with omniscapeImpact</A> #zzz: fix link
 
 <br>
 
 ## **Installing SyncroSim and Julia**
 
-Running **omniscape** SyncroSim requires that SyncroSim and Julia be installed on your computer. Download SyncroSim version 2.4.5 or higher [here](https://syncrosim.com/download/){:target="_blank"} and follow the installation prompts. Download Julia version 1.5.4 or higher [here](https://julialang.org/downloads/){:target="_blank"} and follow the installation prompts. Once these requirements are installed, you are ready to follow along with the tutorials.
+Running **omniscape** SyncroSim requires that SyncroSim and Julia be installed on your computer. 
+1. Download SyncroSim version 2.4.40 or higher [here](https://syncrosim.com/download/){:target="_blank"} and follow the installation prompts. 
+2. Download Julia version 1.5.4 or higher [here](https://julialang.org/downloads/){:target="_blank"} and follow the installation prompts.
 
 <br>
 
-## **Reproducing the Omniscape.jl example with omniscape SyncroSim**
+## **Installing the omniscape SyncroSim package**
 
-This video tutorial will provide an overview of working with **omniscape** SyncroSim in the Windows user interface and demonstrate how to reproduce the [Omniscape.jl example](https://docs.circuitscape.org/Omniscape.jl/stable/examples/){:target="_blank"}. 
+1. Open SyncroSim Desktop.
+2. Select **Files > Packages**
 
-The steps include:
+<img align="left" style="padding: 13px" width="180" src="assets/images/screenshot1.png">
 
-* Installing **omniscape** SyncroSim
-* Creating and configuring a new **omniscape** SyncroSim Library
-* Creating and editing scenarios
-* Running the model
-* Visualizing the results
+3. The *Packages* window will open, listing all the SyncroSim packages installed in your computer. To install a new package from the Package Server, click **Install**.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/jnTltF54xFU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<img align="left" style="padding: 13px" width="180" src="assets/images/screenshot2.png">
 
-> **Note:** Before running a scenario, you need to specify the path to the Julia executable file. To do so, open the Library Properties, and under the Julia Configuration datasheet, click on the import button to navigate to the Julia executable file. If in the default location, you will find it at C:\Users\User_Name\AppData\Local\Programs\Julia-1.8.2\bin\julia.exe. The AppData folder is sometimes hidden. To see it, in File explorer, select View > Show > Hidden items.
+4. A new window will open listing the packages available for install from the Package Server. To install **omniscape** SyncroSim, mark the checkbox beside the package name and click **OK**. 
 
-<br>
+<img align="left" style="padding: 13px" width="180" src="assets/images/screenshot3.png">
 
-## **Creating a reproducible workflow for omniscape SyncroSim in R**
+5.	The **omniscape** SyncroSim package uses Conda to manage the package dependencies. Upon installing the package, you will be prompted to install Conda if it is not already installed in your computer. Then, you will be prompted to create or update the Conda environment for **omniscape** SyncroSim. Click **Yes**.  
 
-This video tutorial will cover how to use the [rsyncrosim](https://syncrosim.github.io/rsyncrosim/){:target="_blank"} R package to interact with **omniscape** SyncroSim in R.
+<img align="left" style="padding: 13px" width="180" src="assets/images/screenshot4.png">
 
-If you'd like to follow along with the tutorial, download R and the R Studio IDE [here](https://posit.co/download/rstudio-desktop/){:target="_blank"} and follow the installation prompts. 
+6.	Return to the *Packages* window, **omniscape** will now be listed along with the other installed packages, and the Conda checkbox will be marked.
 
-> **Note:** If you are running **omniscape** using Conda, you must install rsyncrosim [version 1.4.4](https://github.com/syncrosim/rsyncrosim/releases){:target="_blank"} or higher from GitHub.
-
-
-The topics covered in the video tutorial include:
-* Reproducing the Omniscape.jl example in R using rsyncrosim
-* Performing a sensitivity analysis on an **omniscape** SyncroSim parameter
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/x9sMm_BhwE0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<br>
+<img align="left" style="padding: 13px" width="180" src="assets/images/screenshot5.png">
