@@ -14,7 +14,7 @@ permalink: tutorials/omniscape
 
 ## **Reproducing the Omniscape.jl example with omniscape SyncroSim**
 
-This tutorial provides an overview of working with omniscape SyncroSim in the Windows user interface. It covers the following steps:
+This tutorial provides an overview of working with **omniscape** SyncroSim in the Windows user interface. It covers the following steps:
 
 1. <A href="#step-1">Creating and configuring an omniscape SyncroSim Library</A>
 2. <A href="#step-2">Visualizing scenario results</A>
@@ -155,6 +155,7 @@ The *Categorize Connectivity Output* pipeline stage is an exclusive feature of t
 
 <div class=indentation>
   a.	Note that four connectivity categories have been defined, each associated with an ID value.
+  <br><br>
   b.	Click on the <b>Category ID</b> column to sort categories in ascending order, where <i>Impeded</i> represents areas with the least amount of flow, and <i>Channelized</i> represents areas with the greatest amount to flow.
 </div>
 
@@ -230,6 +231,7 @@ The cumulative current flow represents the total current flowing through the lan
 
 <div class=indentation>
   a.	<i>Map legend</i> – displayed along the left-hand side of the window. It can be edited by double-clicking it.
+  <br><br>
   b.	<i>Toolbar</i> – displayed along the top of the window. Includes zoom, pan and per pixel information tooltip.
 </div>
 
@@ -317,7 +319,7 @@ Next, you will run the scenario. For this example, the run should take approxima
 <img align="center" style="padding: 13px" width="400" src="./images/screenshot37.png">
 
 <div class=indentation>
-  a.	The Run Monitor window will open, informing that the model is Running.
+  a.	The <i>Run Monitor</i> window will open, informing that the model is <i>Running</i>.
 </div>
 
 <img align="center" style="padding: 13px" width="450" src="./images/screenshot38.png">
@@ -374,7 +376,7 @@ Zoom in and pan through the map and try to identify where across the landscape t
 <img align="center" style="padding: 13px" width="600" src="./images/screenshot42.png">
 
 <div class=indentation>
-Visually identifying areas of change between scenarios may not be straightforward. For more quantitative tools to compare changes in connectivity, see the next tutorial <A href="#measuring-the-impact-of-connectivity-change-with-omniscapeimpact">Measuring the impact of connectivity change with <b>omniscapeImpact</b></A>.
+Visually identifying areas of change between scenarios may not be straightforward. For more quantitative tools to compare changes in connectivity, see the next tutorial <a href="omniscape/tutorials/omniscapeImpact">Measuring the impact of connectivity change with omniscapeImpact</a>.
 </div>
 
 <br><br><br>
