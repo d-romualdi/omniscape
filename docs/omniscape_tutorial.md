@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Tutorials
-permalink: /omniscape-tutorial
+permalink: tutorials/omniscape
 ---
 
 ## **Reproducing the Omniscape.jl example with omniscape SyncroSim**

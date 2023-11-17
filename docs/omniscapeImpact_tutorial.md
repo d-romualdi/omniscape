@@ -1,7 +1,7 @@
 ---
 layout: default
 title: OmniscapeImpact
-permalink: /omniscapeImpact-tutorial
+permalink: tutorials/omniscapeImpact
 ---
 
 ## **Measuring the impact of connectivity change with omniscapeImpact**
