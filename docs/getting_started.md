@@ -48,3 +48,5 @@ Running **omniscape** SyncroSim requires that SyncroSim and Julia be installed o
 6\.	Return to the *Packages* window, **omniscape** will now be listed along with the other installed packages, and the Conda checkbox will be marked.
 
 <img align="center" style="padding: 13px" width="600" src="assets/images/screenshot5.png">
+
+<br><br><br>
