@@ -24,7 +24,7 @@ This tutorial guides you through using the **omniscapeImpact** add-on package to
 
 ### **Requirements**
 
-Before you begin, make sure that the **omniscape** SyncroSim package version 1.1.0 is installed. For more information, see <A href="getting_started#installing-the-omniscape-syncrosim-package">Installing the **omniscape** SyncroSim package</A>.
+Before you begin, make sure that the **omniscape** SyncroSim package version 1.1.0 is installed. For more information, see <A href="https://apexrms.github.io/omniscape/getting_started#installing-the-omniscape-syncrosim-package">Installing the **omniscape** SyncroSim package</A>.
 
 <br>
 
