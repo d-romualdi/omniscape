@@ -15,14 +15,14 @@ permalink: tutorials/omniscape
 
 This tutorial provides an overview of working with omniscape SyncroSim in the Windows user interface. It covers the following steps:
 
-1. <A href="#heading01">Creating and configuring an omniscape SyncroSim Library</A>
-2. <A href="#heading02">Visualizing scenario results</A>
-3. <A href="#heading03">Creating, editing, and running a new scenario</A>
-4. <A href="#heading04">Comparing results across scenarios</A>
+1. <A href="#step-1">Creating and configuring an omniscape SyncroSim Library</A>
+2. <A href="#step-2">Visualizing scenario results</A>
+3. <A href="#step-3">Creating, editing, and running a new scenario</A>
+4. <A href="#step-4">Comparing results across scenarios</A>
 
 <br>
 
-<p id="heading01"> <h3><b>Step 1. Creating and configuring an omniscape SyncroSim Library</b></h3> </p>
+<p id="step-1"> <h3><b>Step 1. Creating and configuring an omniscape SyncroSim Library</b></h3> </p>
 
 In SyncroSim, a library is a file with extension .ssim that stores all the model’s inputs and outputs in a format specific to a given package. To create a new library:
 
@@ -171,7 +171,7 @@ Note that each connectivity category is associated with a minimum and maximum va
 
 <br>
 
-<p id="heading02"> <h3><b>Step 2. Visualizing scenario results</b></h3> </p>
+<p id="step-2"> <h3><b>Step 2. Visualizing scenario results</b></h3> </p>
 
 The Omniscape Example template library already contains the results for the *Reference resistance* scenario. In SyncroSim, the results for a scenario are organized into a *Results* folder, nested within its parent scenario. 
 
@@ -269,7 +269,7 @@ Alternatively, a <b>Percent cover</b> summary is also available.
 
 <br>
 
-<p id="heading03"> <h3><b>Step 3. Creating, editing, and running a new scenario</b></h3> </p>
+<p id="step-3"> <h3><b>Step 3. Creating, editing, and running a new scenario</b></h3> </p>
 
 Next, you will learn how to create a scenario and run it to generate results. This scenario will differ from the *Reference resistance* by a ten-fold increase in resistance for all non-forest (i.e., non-source) pixels. 
 
@@ -344,7 +344,7 @@ Next, you will run the scenario. For this example, the run should take approxima
 
 <br>
 
-<p id="heading04"> <h3><b>Step 4. Comparing results across scenarios</b></h3> </p>
+<p id="step-4"> <h3><b>Step 4. Comparing results across scenarios</b></h3> </p>
 
 With two successful scenario runs, you will now compare their results.
 

@@ -15,9 +15,9 @@ permalink: tutorials/omniscapeImpact
 
 This tutorial guides you through using the **omniscapeImpact** add-on package to **omniscape SyncroSim**. It covers the following steps:
 
-1. <A href="#heading01">Installing the omniscapeImpact package</A>
-2. <A href="#heading02">Creating and configuring an omniscapeImpact SyncroSim Library</A>
-3. <A href="#heading03">Visualizing and comparing scenario results</A>
+1. <A href="#step-1">Installing the omniscapeImpact package</A>
+2. <A href="#step-2">Creating and configuring an omniscapeImpact SyncroSim Library</A>
+3. <A href="#step-3">Visualizing and comparing scenario results</A>
 
 <br>
 
@@ -27,7 +27,7 @@ Before you begin, make sure that the **omniscape** SyncroSim package version 1.1
 
 <br>
 
-<p id="heading01"> <h3><b>Step 1. Installing the omniscapeImpact package</b></h3> </p>
+<p id="step-1"> <h3><b>Step 1. Installing the omniscapeImpact package</b></h3> </p>
 
 1\.	Open SyncroSim Desktop.
 
@@ -53,7 +53,7 @@ Before you begin, make sure that the **omniscape** SyncroSim package version 1.1
 
 <br>
 
-<p id="heading02"> <h3><b>Step 2. Creating and configuring an omniscapeImpact SyncroSim Library</b></h3> </p>
+<p id="step-2"> <h3><b>Step 2. Creating and configuring an omniscapeImpact SyncroSim Library</b></h3> </p>
 
 1\.	Open SyncroSim Desktop.
 
@@ -127,7 +127,7 @@ It takes as input the ID of the two scenarios to be compared:
 
 <br>
 
-<p id="heading03"> <h3><b>Step 3. Visualizing and comparing scenario results</b></h3> </p>
+<p id="step-3"> <h3><b>Step 3. Visualizing and comparing scenario results</b></h3> </p>
 
 The Omniscape Impact template library already contains the results for all its scenarios. In SyncroSim, the results for a scenario are organized into a Results folder, nested within its parent scenario. 
 
