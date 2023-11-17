@@ -7,8 +7,7 @@ permalink: tutorials/omniscape
 <style>
   .indentation {
     margin-left: 1rem;
-    margin-bottom: 1rem; 
-    margin-top: 1rem;
+    margin-top: 1rem; 
   }
 </style>
 
@@ -376,3 +375,5 @@ Zoom in and pan through the map and try to identify where across the landscape t
 <div class=indentation>
 Visually identifying areas of change between scenarios may not be straightforward. For more quantitative tools to compare changes in connectivity, see the next tutorial <A href="#measuring-the-impact-of-connectivity-change-with-omniscapeimpact">Measuring the impact of connectivity change with <b>omniscapeImpact</b></A>.
 </div>
+
+<br><br><br>

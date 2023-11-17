@@ -7,8 +7,7 @@ permalink: tutorials/omniscapeImpact
 <style>
   .indentation {
     margin-left: 1rem;
-    margin-bottom: 1rem; 
-    margin-top: 1rem;
+    margin-top: 1rem; 
   }
 </style>
 
@@ -48,7 +47,7 @@ Before you begin, make sure that the **omniscape** SyncroSim package version 1.1
 
 <img align="center" style="padding: 13px" width="550" src="./images/screenshot46.png">
 
-6\.	Return to the *Packages* window, **omniscapeImpact** will now be listed along with the other installed packages, and the Conda checkbox will be marked.
+6\.	Return to the *Packages* window. **omniscapeImpact** will now be listed along with the other installed packages, and the Conda checkbox will be marked.
 
 <img align="center" style="padding: 13px" width="550" src="./images/screenshot47.png">
 
@@ -72,15 +71,15 @@ Before you begin, make sure that the **omniscape** SyncroSim package version 1.1
 
 <br>
 
-A new library will be created based on the selected template, and SyncroSim will automatically open and display it in the Library Explorer window.
+A new library will be created based on the selected template, and SyncroSim will automatically open and display it in the *Library Explorer* window.
 
-<img align="center" style="padding: 13px" width="400" src="./images/screenshot50.png">
+<img align="center" style="padding: 13px" width="375" src="./images/screenshot50.png">
 
 3\.	Note that the library contains two folders: *omniscape* and *omniscapeImpact*.
 
 4\.	Expand the **omniscape** folder and note that it contains three scenarios.
 
-<img align="center" style="padding: 13px" width="400" src="./images/screenshot51.png">
+<img align="center" style="padding: 13px" width="375" src="./images/screenshot51.png">
 
 <div class=indentation>
 The first two scenarios were covered in the tutorial <A href="#reproducing-the-omniscape.jl-example-with-omniscape-syncrosim">Reproducing the Omniscape.jl example with <b>omniscape</b> SyncroSim</A>. 
@@ -140,7 +139,9 @@ The Omniscape Impact template library already contains the results for all its s
 
 3\.	Navigate to the **Add-on** tab and expand the **Results** node. 
 
-<img align="center" style="padding: 13px" width="400" src="./images/screenshot56.png">
+<img align="center" style="padding: 13px" width="450" src="./images/screenshot56.png">
+
+<br>
 
 The **omniscapeImpact** package generates spatial and tabular outputs.
 
@@ -182,11 +183,11 @@ You will now visualize the tabular outputs of <b>omniscapeImpact</b>
 
 <div class=indentation>
 Note that the two scenarios had opposite effects on connectivity. 
-
+<br><br>
 The Increased resistance scenario led to an increase in area for <i>Impeded</i> and <i>Channelized</i> and a decrease in area for <i>Diffuse</i> and <i>Intensified</i>, relative to the Reference scenario. 
-
+<br><br>
 The Decreased resistance scenario led to a decrease in area for <i>Impeded</i> and <i>Channelized</i> and an increase in area for <i>Diffuse</i> and <i>Intensified</i>, relative to the Reference scenario. 
-
+<br><br>
 Note also that the magnitude of change in area was larger under the Decreased resistance scenario.
 </div>
 
@@ -221,3 +222,5 @@ The <i>Per-category difference</i> map represents per pixel losses and gains for
 <br><br>
 Both maps also highlight that a decrease in resistance had a stronger effect on connectivity than an increase.
 </div>
+
+<br><br><br>
