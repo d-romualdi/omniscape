@@ -12,8 +12,8 @@ To get started working with **omniscape** SyncroSim, begin by:
 2. <a href="#installing-the-omniscape-syncrosim-package">Installing the **omniscape** SyncroSim package</a>
 
 Once these requirements have been installed, the following tutorials cover the basics of the **omniscape** SyncroSim package:
-1. <a href="#reproducing-the-omniscape.jl-example-with-omniscape-syncrosim">Reproducing the Omniscape.jl example with **omniscape** SyncroSim</a> #zzz: fix link
-2. <a href="#measuring-the-impact-of-connectivity-change-with-omniscapeimpact">Measuring the impact of connectivity change with omniscapeImpact</a> #zzz: fix link
+1. <a href="./tutorials/omniscape">Reproducing the Omniscape.jl example with **omniscape** SyncroSim</a>
+2. <a href="./tutorials/omniscapeImpact">Measuring the impact of connectivity change with omniscapeImpact</a>
 
 <br>
 
@@ -29,7 +29,7 @@ Running **omniscape** SyncroSim requires that SyncroSim and Julia be installed o
 
 1\. Open SyncroSim Desktop.
 
-2\. Select **Files > Packages**
+2\. Select **Files > Packages**.
 
 <img align="center" style="padding: 13px" width="300" src="assets/images/screenshot1.png">
 
