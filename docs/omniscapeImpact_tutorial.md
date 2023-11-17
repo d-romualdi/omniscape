@@ -76,9 +76,9 @@ A new library will be created based on the selected template, and SyncroSim will
 
 <img align="center" style="padding: 13px" width="375" src="./images/screenshot50.png">
 
-3\.	Note that the library contains two folders: *omniscape* and *omniscapeImpact*.
+1\.	Note that the library contains two folders: *omniscape* and *omniscapeImpact*.
 
-4\.	Expand the **omniscape** folder and note that it contains three scenarios.
+2\.	Expand the **omniscape** folder and note that it contains three scenarios.
 
 <img align="center" style="padding: 13px" width="375" src="./images/screenshot51.png">
 
@@ -88,7 +88,7 @@ The first two scenarios were covered in the tutorial <A href="omniscape">Reprodu
 The additional scenario, <i>Decreased resistance</i>, represents the case where resistance has been decreased by a similar magnitude as in the <i>Increased resistance</i> scenario.
 </div>
 
-5\.	Next, expand the **omniscapeImpact** folder and note that it contains two scenarios:
+3\.	Next, expand the **omniscapeImpact** folder and note that it contains two scenarios:
 
 <div class=indentation>
   a.	<i>Impact of increased resistance</i> – compares the <i>Reference resistance</i> and <i>Increased resistance</i> scenarios.
@@ -98,9 +98,9 @@ The additional scenario, <i>Decreased resistance</i>, represents the case where 
 
 <img align="center" style="padding: 13px" width="400" src="./images/screenshot52.png">
 
-6\.	Double-click on *Impact of increased resistance* to open the scenario properties.
+4\.	Double-click on *Impact of increased resistance* to open the scenario properties.
 
-7\.	Under the *General* tab, navigate to the **Pipeline** datasheet.
+5\.	Under the *General* tab, navigate to the **Pipeline** datasheet.
 
 <div class=indentation>
 Note that it lists one pipeline stage, <i>Connectivity Impact Assessment</i>.
@@ -108,7 +108,7 @@ Note that it lists one pipeline stage, <i>Connectivity Impact Assessment</i>.
 
 <img align="center" style="padding: 13px" width="550" src="./images/screenshot53.png">
 
-8\.	Navigate to the **Add-on** tab. 
+6\.	Navigate to the **Add-on** tab. 
 
 <div class=indentation>
   a.	Under the <i>Impact Assessment</i> node, you will find the package’s only datasheet, called <i>Scenarios to Compare</i>. 
