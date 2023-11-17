@@ -24,7 +24,7 @@ This tutorial guides you through using the **omniscapeImpact** add-on package to
 
 ### **Requirements**
 
-Before you begin, make sure that the **omniscape** SyncroSim package version 1.1.0 is installed. For more information, see <A href="#installing-the-omniscape-syncrosim-package">Installing the **omniscape** SyncroSim package</A>.
+Before you begin, make sure that the **omniscape** SyncroSim package version 1.1.0 is installed. For more information, see <a href="omniscape/getting_started">Installing the **omniscape** SyncroSim package</a>.
 
 <br>
 
@@ -76,19 +76,19 @@ A new library will be created based on the selected template, and SyncroSim will
 
 <img align="center" style="padding: 13px" width="375" src="./images/screenshot50.png">
 
-3\.	Note that the library contains two folders: *omniscape* and *omniscapeImpact*.
+1\.	Note that the library contains two folders: *omniscape* and *omniscapeImpact*.
 
-4\.	Expand the **omniscape** folder and note that it contains three scenarios.
+2\.	Expand the **omniscape** folder and note that it contains three scenarios.
 
 <img align="center" style="padding: 13px" width="375" src="./images/screenshot51.png">
 
 <div class=indentation>
-The first two scenarios were covered in the tutorial <A href="#reproducing-the-omniscape.jl-example-with-omniscape-syncrosim">Reproducing the Omniscape.jl example with <b>omniscape</b> SyncroSim</A>. 
+The first two scenarios were covered in the tutorial <a href="omniscape/tutorials/omniscape">Reproducing the Omniscape.jl example with **omniscape** SyncroSim</a>. 
 <br><br>
 The additional scenario, <i>Decreased resistance</i>, represents the case where resistance has been decreased by a similar magnitude as in the <i>Increased resistance</i> scenario.
 </div>
 
-5\.	Next, expand the **omniscapeImpact** folder and note that it contains two scenarios:
+3\.	Next, expand the **omniscapeImpact** folder and note that it contains two scenarios:
 
 <div class=indentation>
   a.	<i>Impact of increased resistance</i> – compares the <i>Reference resistance</i> and <i>Increased resistance</i> scenarios.
@@ -98,9 +98,9 @@ The additional scenario, <i>Decreased resistance</i>, represents the case where 
 
 <img align="center" style="padding: 13px" width="400" src="./images/screenshot52.png">
 
-6\.	Double-click on *Impact of increased resistance* to open the scenario properties.
+4\.	Double-click on *Impact of increased resistance* to open the scenario properties.
 
-7\.	Under the *General* tab, navigate to the **Pipeline** datasheet.
+5\.	Under the *General* tab, navigate to the **Pipeline** datasheet.
 
 <div class=indentation>
 Note that it lists one pipeline stage, <i>Connectivity Impact Assessment</i>.
@@ -108,7 +108,7 @@ Note that it lists one pipeline stage, <i>Connectivity Impact Assessment</i>.
 
 <img align="center" style="padding: 13px" width="550" src="./images/screenshot53.png">
 
-8\.	Navigate to the **Add-on** tab. 
+6\.	Navigate to the **Add-on** tab. 
 
 <div class=indentation>
   a.	Under the <i>Impact Assessment</i> node, you will find the package’s only datasheet, called <i>Scenarios to Compare</i>. 
