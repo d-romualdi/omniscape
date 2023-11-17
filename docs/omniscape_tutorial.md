@@ -305,7 +305,7 @@ Then, right-click anywhere inside the Library Explorer window and select <b>Past
 
 <br>
 
-Next, you will run the scenario. For this example, the run should take approximately 5 minutes with multiprocessing enabled across 5 cores.
+Next, you will run the scenario. For this example, the run should take approximately 10 minutes with multiprocessing enabled across 5 cores.
 
 5\.	To enable multiprocessing, click on the **Multiprocessing** button along the SyncroSim toolbar and adjust the number of **Multiprocessing jobs** to 5.
 
