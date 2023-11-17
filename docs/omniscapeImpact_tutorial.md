@@ -24,7 +24,7 @@ This tutorial guides you through using the **omniscapeImpact** add-on package to
 
 ### **Requirements**
 
-Before you begin, make sure that the **omniscape** SyncroSim package version 1.1.0 is installed. For more information, see <a href="omniscape/getting_started">Installing the **omniscape** SyncroSim package</a>.
+Before you begin, make sure that the **omniscape** SyncroSim package version 1.1.0 is installed. For more information, see <A href="https://apexrms.github.io/omniscape/getting_started#installing-the-omniscape-syncrosim-package">Installing the **omniscape** SyncroSim package</A>.
 
 <br>
 
@@ -83,8 +83,7 @@ A new library will be created based on the selected template, and SyncroSim will
 <img align="center" style="padding: 13px" width="375" src="./images/screenshot51.png">
 
 <div class=indentation>
-
-The first two scenarios were covered in the tutorial <a href="omniscape/tutorials/omniscape">Reproducing the Omniscape.jl example with **omniscape** SyncroSim</a>. 
+The first two scenarios were covered in the tutorial <A href="omniscape">Reproducing the Omniscape.jl example with <b>omniscape</b> SyncroSim</A>. 
 <br><br>
 The additional scenario, <i>Decreased resistance</i>, represents the case where resistance has been decreased by a similar magnitude as in the <i>Increased resistance</i> scenario.
 </div>

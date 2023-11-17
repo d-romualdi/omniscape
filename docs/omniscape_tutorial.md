@@ -376,7 +376,7 @@ Zoom in and pan through the map and try to identify where across the landscape t
 <img align="center" style="padding: 13px" width="600" src="./images/screenshot42.png">
 
 <div class=indentation>
-Visually identifying areas of change between scenarios may not be straightforward. For more quantitative tools to compare changes in connectivity, see the next tutorial <A href="tutorials/omniscapeImpact">Measuring the impact of connectivity change with <b>omniscapeImpact</b></A>.
+Visually identifying areas of change between scenarios may not be straightforward. For more quantitative tools to compare changes in connectivity, see the next tutorial <A href="omniscapeImpact">Measuring the impact of connectivity change with <b>omniscapeImpact</b></A>.
 </div>
 
 <br><br><br>
