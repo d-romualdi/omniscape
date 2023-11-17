@@ -83,7 +83,7 @@ A new library will be created based on the selected template, and SyncroSim will
 <img align="center" style="padding: 13px" width="375" src="./images/screenshot51.png">
 
 <div class=indentation>
-The first two scenarios were covered in the tutorial <A href="#reproducing-the-omniscape.jl-example-with-omniscape-syncrosim">Reproducing the Omniscape.jl example with <b>omniscape</b> SyncroSim</A>. 
+The first two scenarios were covered in the tutorial <A href="tutorials/omniscape">Reproducing the Omniscape.jl example with <b>omniscape</b> SyncroSim</A>. 
 <br><br>
 The additional scenario, <i>Decreased resistance</i>, represents the case where resistance has been decreased by a similar magnitude as in the <i>Increased resistance</i> scenario.
 </div>
