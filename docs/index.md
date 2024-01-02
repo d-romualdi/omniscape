@@ -16,12 +16,14 @@ permalink: /
 
 **omniscape** SyncroSim allows users to run the latest Omniscape.jl code without ever having to interact with Julia directly. Rather, through SyncroSim, users can run an Omniscape analysis using either a Windows user interface or through scripts written in R (using [rsyncrosim](https://syncrosim.com/r-package/){:target="_blank"}) or Python (using [pysyncrosim](https://pysyncrosim.readthedocs.io/en/latest/){:target="_blank"}). For details on model parameters and configurations, see the [Omniscape.jl documentation](https://docs.circuitscape.org/Omniscape.jl/stable/usage/#Settings-and-Options){:target="_blank"}.
 
+In addition, **omniscape** SyncroSim has an accompanying package: **omniscapeImpact**, a tool for connectivity impact assessments that allows you to compare the connectivity outputs of two **omniscape** analyses. For more information, see the [omniscapeImpact tutorial](https://apexrms.github.io/omniscape/tutorials/omniscapeImpact).
+
 <br> 
 
 ## Requirements
 
 **omniscape** SyncroSim has two requirements:
-* SyncroSim [version 2.4.40](https://syncrosim.com/download/){:target="_blank"} or higher
+* SyncroSim [version 2.4.42](https://syncrosim.com/download/){:target="_blank"} or higher
 * Julia [version 1.5.4](https://julialang.org/downloads/){:target="_blank"} or higher
 
 > Instructions for installing the above requirements for **omniscape** SyncroSim are provided on the [Getting Started](https://apexrms.github.io/omniscape/getting_started.html) page.

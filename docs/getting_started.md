@@ -11,16 +11,12 @@ To get started working with **omniscape** SyncroSim, begin by:
 1. <a href="#installing-syncrosim-and-julia">Installing SyncroSim and Julia</a>
 2. <a href="#installing-the-omniscape-syncrosim-package">Installing the **omniscape** SyncroSim package</a>
 
-Once these requirements have been installed, the following tutorials cover the basics of the **omniscape** SyncroSim package:
-1. <a href="./tutorials/omniscape">Reproducing the Omniscape.jl example with **omniscape** SyncroSim</a>
-2. <a href="./tutorials/omniscapeImpact">Measuring the impact of connectivity change with <b>omniscapeImpact</b></a>
-
 <br>
 
 ## **Installing SyncroSim and Julia**
 
 Running **omniscape** SyncroSim requires that SyncroSim and Julia be installed on your computer. 
-1. Download SyncroSim version 2.4.40 or higher [here](https://syncrosim.com/download/){:target="_blank"} and follow the installation prompts. 
+1. Download SyncroSim version 2.4.42 or higher [here](https://syncrosim.com/download/){:target="_blank"} and follow the installation prompts. 
 2. Download Julia version 1.5.4 or higher [here](https://julialang.org/downloads/){:target="_blank"} and follow the installation prompts.
 
 <br>
@@ -48,5 +44,13 @@ Running **omniscape** SyncroSim requires that SyncroSim and Julia be installed o
 6\.	Return to the *Packages* window, **omniscape** will now be listed along with the other installed packages, and the Conda checkbox will be marked.
 
 <img align="center" style="padding: 13px" width="600" src="assets/images/screenshot5.png">
+
+## **Next steps**
+
+Once the requirements have been installed, the following tutorials will cover the basics of the **omniscape** SyncroSim package for connectivity analyses:
+1. <a href="./tutorials/omniscape">Reproducing the Omniscape.jl example with **omniscape** SyncroSim</a>
+2. <a href="./tutorials/omniscapeImpact">Measuring the impact of connectivity change with <b>omniscapeImpact</b></a>
+
+<img align="center" style="padding: 13px" width="800" src="assets/images/screenshot6.png">
 
 <br><br><br>
