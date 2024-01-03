@@ -39,7 +39,7 @@ a. From the list of packages, select <b>omniscape</b>. Three template library op
 b. Select the <b>Omniscape Example</b> template library. If desired, you may edit the <i>File name</i>, and change the <i>Folder</i> by clicking on the <i>Browse</i> button. Click <b>OK</b>.
 </div>
 
-<img align="center" style="padding: 13px" width="500" src="./images/screenshot7.png">
+<img align="center" style="padding: 13px" width="500" src="./images/screenshot7-new.png">
 
 <br>
 
@@ -51,7 +51,7 @@ A new library has been created based on the selected template. SyncroSim will au
 
 4\.	The *Summary* datasheet contains the metadata for the library.
 
-<img align="center" style="padding: 13px" width="600" src="./images/screenshot9.png">
+<img align="center" style="padding: 13px" width="600" src="./images/screenshot9-new.png">
 
 5\.	Navigate to the **Julia Configuration tab**.
 
@@ -59,7 +59,7 @@ A new library has been created based on the selected template. SyncroSim will au
 The path to the <b>Julia executable</b> file must be specified to run <b>omniscape</b> SyncroSim. To do so, click on the folder icon and navigate to where Julia is installed in your computer. Its default location is <b>C:\Users\[User_Name]\AppData\Local\Programs\Julia-[version]\bin\julia.exe</b>. 
 </div>
 
-<img align="center" style="padding: 13px" width="500" src="./images/screenshot10.png">
+<img align="center" style="padding: 13px" width="500" src="./images/screenshot10-new.png">
 
 > **Note:** The AppData folder is sometimes hidden. To see it, in File Explorer, select View > Show > Hidden items.
 
@@ -209,7 +209,7 @@ You can export the tabular output by right-clicking on the data and selecting <i
 </div>
 </div>
 
-<img align="center" style="padding: 13px" width="600" src="./images/screenshot24.png">
+<img align="center" style="padding: 13px" width="600" src="./images/screenshot24-new.png">
 
 3\.	Close the results scenario properties.
 
@@ -259,14 +259,14 @@ Next, you will visualize the outputs of the second transformer, which takes the 
 
 8\.	Keep the map open for comparison and from the Library Explorer window, navigate to the **Charts** tab and view the **Area** chart. 
 
-<img align="center" style="padding: 13px" width="600" src="./images/screenshot30.png">
+<img align="center" style="padding: 13px" width="600" src="./images/screenshot30-new.png">
 
 <div class=indentation>
 Note that it summarized the amount of area per connectivity category.
-Alternatively, a <b>Percent cover</b> summary is also available.
+Alternatively, a <b>Proportion</b> summary is also available.
 </div>
 
-<img align="center" style="padding: 13px" width="600" src="./images/screenshot31.png">
+<img align="center" style="padding: 13px" width="600" src="./images/screenshot31-new.png">
 
 9\.	Close all plot windows.
 
@@ -361,7 +361,7 @@ If required, right-click on the scenario(s) and select <b>Add to Results</b> fro
 
 2\.	First, view the **Area** chart.
 
-<img align="center" style="padding: 13px" width="600" src="./images/screenshot41.png">
+<img align="center" style="padding: 13px" width="600" src="./images/screenshot41-new.png">
 
 <div class=indentation>
 Note that the increase in resistance resulted in a small increase in the amount of <i>Impeded</i> and <i>Channelized</i> areas, and a decrease in the amount of <i>Diffuse</i> and <i>Intensified</i> areas.  

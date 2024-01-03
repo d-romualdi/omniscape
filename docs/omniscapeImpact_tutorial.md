@@ -24,7 +24,7 @@ This tutorial guides you through using the **omniscapeImpact** add-on package to
 
 ### **Requirements**
 
-Before you begin, make sure that the **omniscape** SyncroSim package version 1.1.0 is installed. For more information, see <A href="https://apexrms.github.io/omniscape/getting_started#installing-the-omniscape-syncrosim-package">Installing the **omniscape** SyncroSim package</A>.
+Before you begin, make sure that the **omniscape** SyncroSim package version 1.1.1 is installed. For more information, see <A href="https://apexrms.github.io/omniscape/getting_started#installing-the-omniscape-syncrosim-package">Installing the **omniscape** SyncroSim package</A>.
 
 <br>
 
@@ -38,11 +38,11 @@ Before you begin, make sure that the **omniscape** SyncroSim package version 1.1
 
 3\.	The *Packages* window will open, listing all the SyncroSim packages installed in your computer. To install a new package from the Package Server, click **Install**.
 
-<img align="center" style="padding: 13px" width="550" src="./images/screenshot44.png">
+<img align="center" style="padding: 13px" width="550" src="./images/screenshot44-new.png">
 
 4\.	A new window will open listing the packages available for install from the Package Server. To install **omniscapeImpact**, mark the checkbox beside the package name and click **OK**. 
 
-<img align="center" style="padding: 13px" width="550" src="./images/screenshot45.png">
+<img align="center" style="padding: 13px" width="550" src="./images/screenshot45-new.png">
 
 5\.	The **omniscapeImpact** package uses Conda to manage the package dependencies. Upon installing the package, you will be prompted to create or update the Conda environment for **omniscapeImpact**. Click **Yes**.
 
@@ -50,7 +50,7 @@ Before you begin, make sure that the **omniscape** SyncroSim package version 1.1
 
 6\.	Return to the *Packages* window. **omniscapeImpact** will now be listed along with the other installed packages, and the Conda checkbox will be marked.
 
-<img align="center" style="padding: 13px" width="550" src="./images/screenshot47.png">
+<img align="center" style="padding: 13px" width="550" src="./images/screenshot47-new.png">
 
 <br>
 
@@ -68,7 +68,7 @@ Before you begin, make sure that the **omniscape** SyncroSim package version 1.1
   b.	Select the <b>Omniscape Impact</b> template library. If desired, you may edit the <i>File name</i>, and change the <i>Folder</i> by clicking on the <i>Browse</i> button. Click <b>OK</b>.
 </div>
 
-<img align="center" style="padding: 13px" width="550" src="./images/screenshot49.png">
+<img align="center" style="padding: 13px" width="550" src="./images/screenshot49-new.png">
 
 <br>
 
@@ -159,14 +159,14 @@ The **omniscapeImpact** package generates spatial and tabular outputs.
 5\.	Under the *Tabular* node are the following outputs:
 
 <div class=indentation>
-  a.	<i>Differences Summary</i> – represents the change in area and percent cover between the baseline and alternative scenarios for each connectivity category.
+  a.	<i>Differences Summary</i> – represents the change in area and proportion between the baseline and alternative scenarios for each connectivity category.
   <br><br>
-  b.	<i>Transitions Summary</i> – represents the change in area and percent cover between the baseline and alternative scenarios for all possible transitions between connectivity categories.
+  b.	<i>Transitions Summary</i> – represents the change in area and proportion between the baseline and alternative scenarios for all possible transitions between connectivity categories.
   <br><br>
   c.	<i>Jaccard Dissimilarity</i> – represents the dissimilarity between the baseline and alternative scenarios for each connectivity category. For each connectivity category, the Jaccard Dissimilarity is calculated as 1 minus the ratio between the number of shared pixels across scenarios and the total number of pixels across scenarios.
 </div>
 
-<img align="center" style="padding: 13px" width="600" src="./images/screenshot58.png">
+<img align="center" style="padding: 13px" width="600" src="./images/screenshot58-new.png">
 
 6\.	Close the scenario properties and collapse the results and scenario folder.
 
@@ -176,11 +176,11 @@ You will now visualize the tabular outputs of <b>omniscapeImpact</b>
 
 7\.	In the Library Explorer window, select the scenarios **Impact of increased resistance** and **Impact of decreased resistance**, right-click, and select **Add to Results** from the context menu. 
 
-<img align="center" style="padding: 13px" width="400" src="./images/screenshot59.png">
+<img align="center" style="padding: 13px" width="400" src="./images/screenshot59-new.png">
 
 8\.	Navigate to the **Charts** tab and double-click to view the **Area difference** chart. 
 
-<img align="center" style="padding: 13px" width="600" src="./images/screenshot60.png">
+<img align="center" style="padding: 13px" width="600" src="./images/screenshot60-new.png">
 
 <div class=indentation>
 Note that the two scenarios had opposite effects on connectivity. 
@@ -194,7 +194,7 @@ Note also that the magnitude of change in area was larger under the Decreased re
 
 9\.	Close the *Area difference* chart and open the **Jaccard dissimilarity** chart.
 
-<img align="center" style="padding: 13px" width="600" src="./images/screenshot61.png">
+<img align="center" style="padding: 13px" width="600" src="./images/screenshot61-new.png">
 
 <div class=indentation>
 Note that a similar pattern is reflected here, with <i>Impact of decreased resistance</i> showing greater dissimilarity to the baseline scenario compared to <i>Impact of increased resistance</i>.

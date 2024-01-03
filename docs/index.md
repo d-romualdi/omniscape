@@ -22,8 +22,8 @@ In addition, **omniscape** SyncroSim has an accompanying package: **omniscapeImp
 
 ## Requirements
 
-**omniscape** SyncroSim has two requirements:
-* SyncroSim [version 2.4.42](https://syncrosim.com/download/){:target="_blank"} or higher
+The latest version of **omniscape** SyncroSim has two requirements:
+* SyncroSim [version 2.5.3](https://syncrosim.com/download/){:target="_blank"} or higher
 * Julia [version 1.5.4](https://julialang.org/downloads/){:target="_blank"} or higher
 
 > Instructions for installing the above requirements for **omniscape** SyncroSim are provided on the [Getting Started](https://apexrms.github.io/omniscape/getting_started.html) page.

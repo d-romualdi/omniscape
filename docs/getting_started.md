@@ -16,7 +16,7 @@ To get started working with **omniscape** SyncroSim, begin by:
 ## **Installing SyncroSim and Julia**
 
 Running **omniscape** SyncroSim requires that SyncroSim and Julia be installed on your computer. 
-1. Download SyncroSim version 2.4.42 or higher [here](https://syncrosim.com/download/){:target="_blank"} and follow the installation prompts. 
+1. Download SyncroSim version 2.5.3 or higher [here](https://syncrosim.com/download/){:target="_blank"} and follow the installation prompts. 
 2. Download Julia version 1.5.4 or higher [here](https://julialang.org/downloads/){:target="_blank"} and follow the installation prompts.
 
 <br>
@@ -35,7 +35,7 @@ Running **omniscape** SyncroSim requires that SyncroSim and Julia be installed o
 
 4\. A new window will open listing the packages available for install from the Package Server. To install **omniscape** SyncroSim, mark the checkbox beside the package name and click **OK**. 
 
-<img align="center" style="padding: 13px" width="600" src="assets/images/screenshot3.png">
+<img align="center" style="padding: 13px" width="600" src="assets/images/screenshot3-new.png">
 
 5\.	The **omniscape** SyncroSim package uses Conda to manage the package dependencies. Upon installing the package, you will be prompted to install Conda if it is not already installed in your computer. Then, you will be prompted to create or update the Conda environment for **omniscape** SyncroSim. Click **Yes**.  
 
@@ -43,7 +43,7 @@ Running **omniscape** SyncroSim requires that SyncroSim and Julia be installed o
 
 6\.	Return to the *Packages* window, **omniscape** will now be listed along with the other installed packages, and the Conda checkbox will be marked.
 
-<img align="center" style="padding: 13px" width="600" src="assets/images/screenshot5.png">
+<img align="center" style="padding: 13px" width="600" src="assets/images/screenshot5-new.png">
 
 ## **Next steps**
 
