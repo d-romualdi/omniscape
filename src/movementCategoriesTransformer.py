@@ -84,7 +84,7 @@ movementFreq = movementFreq.rename(columns = {0: "classID", 1:"freq"})
 
 movementTypesFreq = pd.merge(right = movementFreq, left = movementTypeClasses)
 
-percentCover = movementTypesFreq.freq/movementTypesFreq.freq.sum() 
+percentCover = movementTypesFreq.freq/movementTypesFreq.freq.sum()
 amountArea = (movementTypesFreq.freq * normCurr.res[1] * normCurr.res[1])/10000
 
 tabularMovementTypes = pd.concat([movementTypesFreq.movementTypesID, amountArea, percentCover], axis = 1, ignore_index = True)

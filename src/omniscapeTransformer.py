@@ -132,8 +132,14 @@ if outputOptions.write_as_tif[0] != outputOptions.write_as_tif[0]:
 if juliaConfig.julia_path.empty:
     sys.exit("A julia executable is required.")
 
+if not os.path.isfile(juliaConfig.julia_path[0]):
+    sys.exit("The path to the julia executable is not valid or does not exist.")
+
 if ' ' in juliaConfig.julia_path[0]:
     sys.exit("The path to the julia executable may not contains spaces.")
+
+if not 'julia.exe' in juliaConfig.julia_path[0]:
+    sys.exit("The path to the julia executable must contain the 'julia.exe' file.")
 
 if requiredData.resistance_file[0] != requiredData.resistance_file[0]:
     sys.exit("'Resistance file' is required.")
