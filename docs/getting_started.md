@@ -47,7 +47,7 @@ Running **omniscape** SyncroSim requires that SyncroSim and Julia be installed o
 
 ## **Next steps**
 
-Once the requirements have been installed, the following tutorials will cover the basics of the **omniscape** SyncroSim package for connectivity analyses:
+Once the requirements have been installed, the following tutorials will cover the basics of the **omniscape** and **omniscapeImpact** SyncroSim packages for connectivity analyses:
 1. <a href="./tutorials/omniscape">Reproducing the Omniscape.jl example with **omniscape** SyncroSim</a>
 2. <a href="./tutorials/omniscapeImpact">Measuring the impact of connectivity change with <b>omniscapeImpact</b></a>
 

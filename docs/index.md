@@ -5,9 +5,12 @@ description: "SyncroSim package for calculating omni-directional habitat connect
 permalink: /
 ---
 
-# **omniscape** SyncroSim
+# **omniscape** & **omniscapeImpact** SyncroSim
 <img align="right" style="padding: 13px" width="180" src="assets/images/logo/omniscape-sticker.png">
-[![GitHub release](https://img.shields.io/github/v/release/ApexRMS/omniscape.svg?style=for-the-badge&color=d68a06)](https://GitHub.com/ApexRMS/omniscape/releases/)    <a href="https://github.com/ApexRMS/omniscape"><img align="middle" style="padding: 1px" width="30" src="assets/images/logo/github-trans2.png">
+[![GitHub release](https://img.shields.io/github/v/release/ApexRMS/omniscape.svg?style=for-the-badge&color=d68a06)](https://GitHub.com/ApexRMS/omniscape/releases/) <a href="https://github.com/ApexRMS/omniscape"><img align="middle" style="padding: 1px" width="30" src="assets/images/logo/github-trans2.png"></a> omniscape
+<br>
+[![GitHub release](https://img.shields.io/github/v/release/ApexRMS/omniscapeImpact.svg?style=for-the-badge&color=d68a06)](https://GitHub.com/ApexRMS/omniscapeImpact/releases/)
+<a href="https://github.com/ApexRMS/omniscape"><img align="middle" style="padding: 1px" width="30" src="assets/images/logo/github-trans2.png"></a> omniscapeImpact
 <br>
 
 ## Omni-directional habitat connectivity based on circuit theory
@@ -16,7 +19,7 @@ permalink: /
 
 **omniscape** SyncroSim allows users to run the latest Omniscape.jl code without ever having to interact with Julia directly. Rather, through SyncroSim, users can run an Omniscape analysis using either a Windows user interface or through scripts written in R (using [rsyncrosim](https://syncrosim.com/r-package/){:target="_blank"}) or Python (using [pysyncrosim](https://pysyncrosim.readthedocs.io/en/latest/){:target="_blank"}). For details on model parameters and configurations, see the [Omniscape.jl documentation](https://docs.circuitscape.org/Omniscape.jl/stable/usage/#Settings-and-Options){:target="_blank"}.
 
-In addition, **omniscape** SyncroSim has an accompanying package: **omniscapeImpact**, a tool for connectivity impact assessments that allows you to compare the connectivity outputs of two **omniscape** analyses. For more information, see the [omniscapeImpact tutorial](https://apexrms.github.io/omniscape/tutorials/omniscapeImpact).
+**omniscapeImpact** is an [add-on package](https://docs.syncrosim.com/how_to_guides/package_overview.html){:target="_blank"} to **omniscape** SyncroSim that compares the connectivity outputs of two **omniscape** analyses. For more information, see the [omniscapeImpact tutorial](https://apexrms.github.io/omniscape/tutorials/omniscapeImpact).
 
 <br> 
 
@@ -26,22 +29,24 @@ The latest version of **omniscape** SyncroSim has two requirements:
 * SyncroSim [version 2.5.3](https://syncrosim.com/download/){:target="_blank"} or higher
 * Julia [version 1.5.4](https://julialang.org/downloads/){:target="_blank"} or higher
 
-> Instructions for installing the above requirements for **omniscape** SyncroSim are provided on the [Getting Started](https://apexrms.github.io/omniscape/getting_started.html) page.
-
-> The latest version of the Omniscape.jl Julia package will be automatically installed during runtime.
+Instructions for installing the above requirements are provided on the [Getting Started](https://apexrms.github.io/omniscape/getting_started.html) page.
 
 <br>
 
-## Getting Started
+## Tutorials
 
-For a guided tutorial on **omniscape** SyncroSim, see the [Getting Started](https://apexrms.github.io/omniscape/getting_started.html) page.
+For tutorials covering the basics of **omniscape** and **omniscapeImpact** SyncroSim packages, see:
+* <a href="./tutorials/omniscape">Reproducing the Omniscape.jl example with **omniscape** SyncroSim</a>
+* <a href="./tutorials/omniscapeImpact">Measuring the impact of connectivity change with <b>omniscapeImpact</b></a>
 
 <br>
 
 ## Key Links
 
-Browse source code at
+Browse source code for **omniscape** at
 [http://github.com/ApexRMS/omniscape/](http://github.com/ApexRMS/omniscape/){:target="_blank"}. <br>
+Browse source code for **omniscapeImpact** at
+[http://github.com/ApexRMS/omniscapeImpact/](http://github.com/ApexRMS/omniscapeImpact/){:target="_blank"}. <br>
 Report a bug or contribute an idea at
 [http://github.com/ApexRMS/omniscape/issues](http://github.com/ApexRMS/omniscape/issues){:target="_blank"}. <br>
 Omniscape.jl documentation at [https://docs.circuitscape.org/Omniscape.jl/stable/](https://docs.circuitscape.org/Omniscape.jl/stable/){:target="_blank"}. <br>
