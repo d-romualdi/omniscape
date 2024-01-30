@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Home
-description: "SyncroSim package for calculating omni-directional habitat connectivity"
+description: "SyncroSim package for calculating omnidirectional landscape connectivity"
 permalink: /
 ---
 
@@ -13,9 +13,9 @@ permalink: /
 <a href="https://github.com/ApexRMS/omniscape"><img align="middle" style="padding: 1px" width="30" src="assets/images/logo/github-trans2.png"></a> omniscapeImpact
 <br>
 
-## Omni-directional habitat connectivity based on circuit theory
+## Omnidirectional landscape connectivity based on circuit theory
 
-**omniscape** SyncroSim is an open-source [SyncroSim](https://syncrosim.com/){:target="_blank"} base package for running [Omniscape.jl](https://docs.circuitscape.org/Omniscape.jl/stable/){:target="_blank"} and calculating omni-directional habitat connectivity. 
+**omniscape** SyncroSim is an open-source [SyncroSim](https://syncrosim.com/){:target="_blank"} base package for running [Omniscape.jl](https://docs.circuitscape.org/Omniscape.jl/stable/){:target="_blank"} and calculating omnidirectional landscape connectivity. 
 
 **omniscape** SyncroSim allows users to run the latest Omniscape.jl code without ever having to interact with Julia directly. Rather, through SyncroSim, users can run an Omniscape analysis using either a Windows user interface or through scripts written in R (using [rsyncrosim](https://syncrosim.com/r-package/){:target="_blank"}) or Python (using [pysyncrosim](https://pysyncrosim.readthedocs.io/en/latest/){:target="_blank"}). For details on model parameters and configurations, see the [Omniscape.jl documentation](https://docs.circuitscape.org/Omniscape.jl/stable/usage/#Settings-and-Options){:target="_blank"}.
 
@@ -53,7 +53,7 @@ Omniscape.jl documentation at [https://docs.circuitscape.org/Omniscape.jl/stable
 
 <br>
 
-## Developers
+## Contributors
 
 Carina Rauen Firkowski (Author, maintainer) <a href="https://orcid.org/0000-0003-0540-9529"><img align="middle" style="padding: 0.5px" width="17" src="assets/images/ORCID.png"></a>
 <br>
@@ -61,4 +61,12 @@ Bronwyn Rayfield (Author) <a href="https://orcid.org/0000-0003-1768-1300"><img a
 <br>
 Katie Birchard (Author)
 <br>
+Marie-Josée Fortin (Author) <a href="https://orcid.org/0000-0002-9935-1366"><img align="middle" style="padding: 0.5px" width="17" src="assets/images/ORCID.png"></a>
+<br>
 Colin Daniel (Author) <a href="https://orcid.org/0000-0001-7367-2041"><img align="middle" style="padding: 0.5px" width="17" src="assets/images/ORCID.png"></a>
+
+<br>
+
+## Citation
+
+Firkowski CR, Rayfield B, Birchard K, Fortin M-J, Daniel C. (2023). omniscape SyncroSim: omnidirectional landscape connectivity based on Omniscape.jl in SyncroSim. https://apexrms.github.io/omniscape/.
