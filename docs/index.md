@@ -69,4 +69,4 @@ Colin Daniel (Author) <a href="https://orcid.org/0000-0001-7367-2041"><img align
 
 ## Citation
 
-Firkowski CR, Rayfield B, Birchard K, Fortin M-J, Daniel C. (2023). omniscape SyncroSim: omnidirectional landscape connectivity based on Omniscape.jl in SyncroSim. https://apexrms.github.io/omniscape/.
+Firkowski CR, Rayfield B, Birchard K, Fortin M-J, Daniel C. (2024). omniscape SyncroSim: omnidirectional landscape connectivity based on Omniscape.jl in SyncroSim. https://apexrms.github.io/omniscape/.
