@@ -14,7 +14,7 @@ import numpy as np
 ps.environment.progress_bar(message = "Setting up Scenario", report_type = "message")
 
 e = ps.environment._environment()
-wrkDir = e.output_directory.item()
+wrkDir = e.data_directory.item()
 
 myLibrary = ps.Library()
 myProject = myLibrary.projects(pid = 1) 
@@ -23,7 +23,7 @@ myScenario = myLibrary.scenarios(myScenarioID)
 myScenarioParentID = int(myScenario.parent_id)
 myParentScenario = myLibrary.scenarios(sid = myScenarioParentID)
 
-dataPath = os.path.join(e.input_directory.item(), "Scenario-" + repr(myScenarioID))
+dataPath = os.path.join(e.data_directory.item(), "Scenario-" + repr(myScenarioID))
 
 # Create directory, if applicable
 outputMovementPath = os.path.join(wrkDir, "Scenario-" + repr(myScenarioID), "omniscape_outputSpatialMovement")
@@ -87,7 +87,7 @@ movementTypesFreq = pd.merge(right = movementFreq, left = movementTypeClasses)
 percentCover = movementTypesFreq.freq/movementTypesFreq.freq.sum()
 amountArea = (movementTypesFreq.freq * normCurr.res[1] * normCurr.res[1])/10000
 
-tabularMovementTypes = pd.concat([movementTypesFreq.movementTypesID, amountArea, percentCover], axis = 1, ignore_index = True)
+tabularMovementTypes = pd.concat([movementTypesFreq.movementTypesId, amountArea, percentCover], axis = 1, ignore_index = True)
 myTabularOutput = tabularMovementTypes.rename(columns = {0: "movementTypesID", 1:"amountArea", 2:"percentCover"})
 
 myParentScenario.save_datasheet(name = "omniscape_outputTabularReclassification", data = myTabularOutput)

@@ -11,7 +11,8 @@ import rasterio
 ps.environment.progress_bar(message="Setting up Scenario", report_type="message")
 
 e = ps.environment._environment()
-wrkDir = e.output_directory.item()
+wrkDir = e.data_directory.item() ## kb - changed from output directory to data dir
+
 if os.path.exists(wrkDir) == False:
     os.mkdir(wrkDir)
 
@@ -21,7 +22,7 @@ myScenario = myLibrary.scenarios(myScenarioID)
 myScenarioParentID = int(myScenario.parent_id)
 myParentScenario = myLibrary.scenarios(sid = myScenarioParentID)
 
-dataPath = os.path.join(e.input_directory.item(), "Scenario-" + repr(myScenarioID))
+dataPath = os.path.join(wrkDir, "Scenario-" + repr(myScenarioID)) 
 
 
 
