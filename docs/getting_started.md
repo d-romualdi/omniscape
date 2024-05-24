@@ -16,7 +16,7 @@ To get started working with **omniscape** SyncroSim, begin by:
 ## **Installing SyncroSim and Julia**
 
 Running **omniscape** SyncroSim requires that SyncroSim and Julia be installed on your computer. 
-1. Download SyncroSim version 2.5.3 or higher [here](https://syncrosim.com/download/){:target="_blank"} and follow the installation prompts. 
+1. Download SyncroSim version 2.5.12 or higher [here](https://syncrosim.com/download/){:target="_blank"} and follow the installation prompts. 
 2. Download Julia version 1.5.4 or higher [here](https://julialang.org/downloads/){:target="_blank"} and follow the installation prompts.
 
 <br>
