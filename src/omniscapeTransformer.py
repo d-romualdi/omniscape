@@ -45,64 +45,64 @@ juliaConfig = myScenario.datasheets(name = "omniscape_juliaConfiguration")
 
 # If not provided, set default values  -----------------------------------------
 
-if generalOptions.source_from_resistance[0] == "Yes":
-   requiredData.source_file = pd.Series("None")
+if generalOptions.sourceFromResistance[0] == "Yes":
+   requiredData.sourceFile = pd.Series("None")
 
-if generalOptions.block_size.empty:
-    generalOptions.block_size = pd.Series(1)
+if generalOptions.blockSize.empty:
+    generalOptions.blockSize = pd.Series(1)
 
-if generalOptions.source_from_resistance[0] != generalOptions.source_from_resistance[0]:
-    generalOptions.source_from_resistance = pd.Series("No")
+if generalOptions.sourceFromResistance[0] != generalOptions.sourceFromResistance[0]:
+    generalOptions.sourceFromResistance = pd.Series("No")
 
-if generalOptions.resistance_is_conductance[0] != generalOptions.resistance_is_conductance[0]:
-    generalOptions.resistance_is_conductance = pd.Series("No")
+if generalOptions.resistanceIsConductance[0] != generalOptions.resistanceIsConductance[0]:
+    generalOptions.resistanceIsConductance = pd.Series("No")
 
-if generalOptions.r_cutoff[0] != generalOptions.r_cutoff[0]:
-    generalOptions.r_cutoff = pd.Series("Inf")
+if generalOptions.rCutoff[0] != generalOptions.rCutoff[0]:
+    generalOptions.rCutoff = pd.Series("Inf")
 
 if generalOptions.buffer[0] != generalOptions.buffer[0]:
     generalOptions.buffer = pd.Series(0)
 
-if generalOptions.source_threshold[0] != generalOptions.source_threshold[0]:
-    generalOptions.source_threshold = pd.Series(0)
+if generalOptions.sourceThreshold[0] != generalOptions.sourceThreshold[0]:
+    generalOptions.sourceThreshold = pd.Series(0)
 
-if generalOptions.calc_normalized_current[0] != generalOptions.calc_normalized_current[0]:
-    generalOptions.calc_normalized_current = pd.Series("No")
+if generalOptions.calcNormalizedCurrent[0] != generalOptions.calcNormalizedCurrent[0]:
+    generalOptions.calcNormalizedCurrent = pd.Series("No")
 
-if generalOptions.calc_flow_potential[0] != generalOptions.calc_flow_potential[0]:
-    generalOptions.calc_flow_potential = pd.Series("No")
+if generalOptions.calcFlowPotential[0] != generalOptions.calcFlowPotential[0]:
+    generalOptions.calcFlowPotential = pd.Series("No")
 
-if generalOptions.allow_different_projections[0] != generalOptions.allow_different_projections[0]:
-    generalOptions.allow_different_projections = pd.Series("No")
+if generalOptions.allowDifferentProjections[0] != generalOptions.allowDifferentProjections[0]:
+    generalOptions.allowDifferentProjections = pd.Series("No")
 
-if generalOptions.connect_four_neighbors_only[0] != generalOptions.connect_four_neighbors_only[0]:
-    generalOptions.connect_four_neighbors_only = pd.Series("No")
+if generalOptions.connectFourNeighborsOnly[0] != generalOptions.connectFourNeighborsOnly[0]:
+    generalOptions.connectFourNeighborsOnly = pd.Series("No")
 
 if generalOptions.solver[0] != generalOptions.solver[0]:
     generalOptions.solver = pd.Series("cg+amg")
 
-if resistanceOptions.reclassify_resistance.empty:
-    resistanceOptions.reclassify_resistance = pd.Series("No")
+if resistanceOptions.reclassifyResistance.empty:
+    resistanceOptions.reclassifyResistance = pd.Series("No")
 
-if resistanceOptions.reclassify_resistance.item() == "No":
-    resistanceOptions.reclass_table = pd.Series("None")
+if resistanceOptions.reclassifyResistance.item() == "No":
+    resistanceOptions.reclassTable = pd.Series("None")
 
-if resistanceOptions.write_reclassified_resistance[0] != resistanceOptions.write_reclassified_resistance[0]:
-    resistanceOptions.write_reclassified_resistance = pd.Series("Yes")
+if resistanceOptions.writeReclassifiedResistance[0] != resistanceOptions.writeReclassifiedResistance[0]:
+    resistanceOptions.writeReclassifiedResistance = pd.Series("Yes")
 
 if conditionalOptions.conditional.empty:
     conditionalOptions.conditional = pd.Series("No")
 
-if conditionalOptions.n_conditions[0] != conditionalOptions.n_conditions[0]:
-    conditionalOptions.n_conditions = pd.Series(1)
+if conditionalOptions.nConditions[0] != conditionalOptions.nConditions[0]:
+    conditionalOptions.nConditions = pd.Series(1)
 
 if conditionalOptions.conditional.item() == "No":
-    condition1.condition1_file = pd.Series("None")
-    condition1.condition1_lower = pd.Series("NaN")
-    condition1.condition1_upper = pd.Series("NaN")
-    condition2.condition2_file = pd.Series("None")
-    condition2.condition2_lower = pd.Series("NaN")
-    condition2.condition2_upper = pd.Series("NaN")
+    condition1.condition1File = pd.Series("None")
+    condition1.condition1Lower = pd.Series("NaN")
+    condition1.condition1Upper = pd.Series("NaN")
+    condition2.condition2File = pd.Series("None")
+    condition2.condition2Lower = pd.Series("NaN")
+    condition2.condition2Upper = pd.Series("NaN")
 
 if condition1.comparison1[0] != condition1.comparison1[0]:
     condition1.comparison1 = pd.Series("within")
@@ -110,21 +110,21 @@ if condition1.comparison1[0] != condition1.comparison1[0]:
 if condition2.comparison2[0] != condition2.comparison2[0]:
     condition2.comparison2 = pd.Series("within")
 
-if futureConditions.compare_to_future.empty:
-    futureConditions.compare_to_future = pd.Series("none")
+if futureConditions.compareToFuture.empty:
+    futureConditions.compareToFuture = pd.Series("none")
 
-if futureConditions.compare_to_future.item() == "none":
-    futureConditions.condition1_future_file = pd.Series("None")
-    futureConditions.condition2_future_file = pd.Series("None")
+if futureConditions.compareToFuture.item() == "none":
+    futureConditions.condition1FutureFile = pd.Series("None")
+    futureConditions.condition2FutureFile = pd.Series("None")
 
-if outputOptions.write_raw_currmap.empty:
-    outputOptions.write_raw_currmap = pd.Series("Yes")
+if outputOptions.writeRawCurrmap.empty:
+    outputOptions.writeRawCurrmap = pd.Series("Yes")
 
-if outputOptions.mask_nodata[0] != outputOptions.mask_nodata[0]:
-    outputOptions.mask_nodata = pd.Series("Yes")
+if outputOptions.maskNodata[0] != outputOptions.maskNodata[0]:
+    outputOptions.maskNodata = pd.Series("Yes")
 
-if outputOptions.write_as_tif[0] != outputOptions.write_as_tif[0]:
-    outputOptions.write_as_tif = pd.Series("Yes")
+if outputOptions.writeAsTif[0] != outputOptions.writeAsTif[0]:
+    outputOptions.writeAsTif = pd.Series("Yes")
 
 
 

@@ -2,7 +2,7 @@
 <package name="omniscape" displayName="Omniscape" description="Omni-directional habitat connectivity based on circuit theory" url="https://apexrms.github.io/omniscape/" version="2.0.0">
             
       <dataSheet name="juliaConfiguration" displayName="Julia Configuration" dataScope="Library" isSingleRow="True">
-          <column name="julia_path" displayName="Julia executable" dataType="String" isExternalFile="True" allowDbNull="False" externalFileAbsolute="True" />
+          <column name="juliaPath" displayName="Julia executable" dataType="String" isExternalFile="True" allowDbNull="False" externalFileAbsolute="True" />
       </dataSheet>
       
       <dataSheet name="movementTypes" displayName="Connectivity Categories" dataScope="Project" displayMember="Name">
@@ -12,64 +12,64 @@
       </dataSheet>
 
       <dataSheet name="Required" displayName="Required" isSingleRow="True">
-          <column name="resistance_file" displayName="Resistance file" dataType="String" isExternalFile="True" externalFileFilter="GeoTIFF Files (*.tif)|*.tif|All Files (*.*)|*.*" isRaster="True" />
+          <column name="resistanceFile" displayName="Resistance file" dataType="String" isExternalFile="True" externalFileFilter="GeoTIFF Files (*.tif)|*.tif|All Files (*.*)|*.*" isRaster="True" />
           <column name="radius" displayName="Radius" dataType="Integer" validationType="WholeNumber" validationCondition="None" />
-          <column name="source_file" displayName="Source file" dataType="String" isExternalFile="True" externalFileFilter="GeoTIFF Files (*.tif)|*.tif|All Files (*.*)|*.*" isRaster="True" />
+          <column name="sourceFile" displayName="Source file" dataType="String" isExternalFile="True" externalFileFilter="GeoTIFF Files (*.tif)|*.tif|All Files (*.*)|*.*" isRaster="True" />
       </dataSheet>
 
       <dataSheet name="GeneralOptions" displayName="General Options" isSingleRow="True">
-          <column name="block_size" displayName="Block size" dataType="Integer" validationType="WholeNumber" validationCondition="None" isOptional="True" defaultValue="1" />
-          <column name="source_from_resistance" displayName="Source from resistance" dataType="Boolean" isOptional="True" defaultValue="0" />
-          <column name="resistance_is_conductance" displayName="Resistance is conductance" dataType="Boolean" isOptional="True" defaultValue="0" />
-          <column name="r_cutoff" displayName="R cutoff" dataType="Double" validationType="Decimal" validationCondition="None" isOptional="True" defaultValue="9999" />
+          <column name="blockSize" displayName="Block size" dataType="Integer" validationType="WholeNumber" validationCondition="None" isOptional="True" defaultValue="1" />
+          <column name="sourceFromResistance" displayName="Source from resistance" dataType="Boolean" isOptional="True" defaultValue="0" />
+          <column name="resistanceIsConductance" displayName="Resistance is conductance" dataType="Boolean" isOptional="True" defaultValue="0" />
+          <column name="rCutoff" displayName="R cutoff" dataType="Double" validationType="Decimal" validationCondition="None" isOptional="True" defaultValue="9999" />
           <column name="buffer" displayName="Buffer" dataType="Integer" validationType="WholeNumber" validationCondition="None" isOptional="True" defaultValue="0" />
-          <column name="source_threshold" displayName="Source threshold" dataType="Double" validationType="Decimal" validationCondition="None" isOptional="True" defaultValue="0" />
-          <column name="calc_normalized_current" displayName="Calculate normalized current" dataType="Boolean" isOptional="True" defaultValue="0" />
-          <column name="calc_flow_potential" displayName="Calculate flow potential" dataType="Boolean" isOptional="True" defaultValue="0" />
-          <column name="allow_different_projections" displayName="Allow different projections" dataType="Boolean" isOptional="True" defaultValue="0" />
-          <column name="connect_four_neighbors_only" displayName="Connect four neighbors only" dataType="Boolean" isOptional="True" defaultValue="0" />
+          <column name="sourceThreshold" displayName="Source threshold" dataType="Double" validationType="Decimal" validationCondition="None" isOptional="True" defaultValue="0" />
+          <column name="calcNormalizedCurrent" displayName="Calculate normalized current" dataType="Boolean" isOptional="True" defaultValue="0" />
+          <column name="calcFlowPotential" displayName="Calculate flow potential" dataType="Boolean" isOptional="True" defaultValue="0" />
+          <column name="allowDifferentProjections" displayName="Allow different projections" dataType="Boolean" isOptional="True" defaultValue="0" />
+          <column name="connectFourNeighborsOnly" displayName="Connect four neighbors only" dataType="Boolean" isOptional="True" defaultValue="0" />
           <column name="solver" displayName="Solver" dataType="String" isOptional="True" defaultValue="cg+amg" />
       </dataSheet>
 
       <dataSheet name="ResistanceOptions" displayName="Options" isSingleRow="True">
-          <column name="reclassify_resistance" displayName="Reclassify resistance" dataType="Boolean" isOptional="True" defaultValue="0" />
-          <column name="write_reclassified_resistance" displayName="Write reclassified resistance" dataType="Boolean" isOptional="True" defaultValue="0" />
+          <column name="reclassifyResistance" displayName="Reclassify resistance" dataType="Boolean" isOptional="True" defaultValue="0" />
+          <column name="writeReclassifiedResistance" displayName="Write reclassified resistance" dataType="Boolean" isOptional="True" defaultValue="0" />
       </dataSheet>
 
       <dataSheet name="ReclassTable" displayName="Reclass Table">
-          <column name="land_cover" displayName="Land cover class" dataType="Integer" validationType="WholeNumber" validationCondition="None" />
-          <column name="resistance_value" displayName="Resistance value" dataType="Double" validationType="Decimal" validationCondition="None" />
+          <column name="landCover" displayName="Land cover class" dataType="Integer" validationType="WholeNumber" validationCondition="None" />
+          <column name="resistanceValue" displayName="Resistance value" dataType="Double" validationType="Decimal" validationCondition="None" />
       </dataSheet>
 
       <dataSheet name="OutputOptions" displayName="Output Options" isSingleRow="True">
-          <column name="write_raw_currmap" displayName="Write raw cumulative current map" dataType="Boolean" isOptional="True" defaultValue="1" />
-          <column name="mask_nodata" displayName="Mask nodata" dataType="Boolean" isOptional="True" defaultValue="1" />
-          <column name="write_as_tif" displayName="Write as tif" dataType="Boolean" isOptional="True" defaultValue="0" />
+          <column name="writeRawCurrmap" displayName="Write raw cumulative current map" dataType="Boolean" isOptional="True" defaultValue="1" />
+          <column name="maskNodata" displayName="Mask nodata" dataType="Boolean" isOptional="True" defaultValue="1" />
+          <column name="writeAsTif" displayName="Write as tif" dataType="Boolean" isOptional="True" defaultValue="0" />
       </dataSheet>
 
       <dataSheet name="ConditionalOptions" displayName="Options" isSingleRow="True">
           <column name="conditional" displayName="Conditional" dataType="Boolean" isOptional="True" defaultValue="0" />
-          <column name="n_conditions" displayName="Number of conditions" dataType="String" isOptional="True" defaultValue="1" />
+          <column name="nConditions" displayName="Number of conditions" dataType="String" isOptional="True" defaultValue="1" />
       </dataSheet>
 
       <dataSheet name="Condition1" displayName="Condition 1" isSingleRow="True">
-          <column name="condition1_file" displayName="Condition 1 file" dataType="String" isExternalFile="True" externalFileFilter="GeoTIFF Files (*.tif)|*.tif|All Files (*.*)|*.*" isRaster="True" isOptional="True" />
+          <column name="condition1File" displayName="Condition 1 file" dataType="String" isExternalFile="True" externalFileFilter="GeoTIFF Files (*.tif)|*.tif|All Files (*.*)|*.*" isRaster="True" isOptional="True" />
           <column name="comparison1" displayName="Comparison 1" dataType="String" isOptional="True" defaultValue="within" />
-          <column name="condition1_lower" displayName="Condition 1 lower" dataType="Double" validationType="Decimal" validationCondition="None" isOptional="True" />
-          <column name="condition1_upper" displayName="Condition 1 upper" dataType="Double" validationType="Decimal" validationCondition="None" isOptional="True" />
+          <column name="condition1Lower" displayName="Condition 1 lower" dataType="Double" validationType="Decimal" validationCondition="None" isOptional="True" />
+          <column name="condition1Upper" displayName="Condition 1 upper" dataType="Double" validationType="Decimal" validationCondition="None" isOptional="True" />
       </dataSheet>
 
       <dataSheet name="Condition2" displayName="Condition 2" isSingleRow="True">
-          <column name="condition2_file" displayName="Condition 2 file" dataType="String" isExternalFile="True" externalFileFilter="GeoTIFF Files (*.tif)|*.tif|All Files (*.*)|*.*" isRaster="True" isOptional="True" />
+          <column name="condition2File" displayName="Condition 2 file" dataType="String" isExternalFile="True" externalFileFilter="GeoTIFF Files (*.tif)|*.tif|All Files (*.*)|*.*" isRaster="True" isOptional="True" />
           <column name="comparison2" displayName="Comparison 2" dataType="String" isOptional="True" defaultValue="within" />
-          <column name="condition2_lower" displayName="Condition 2 lower" dataType="Double" validationType="Decimal" validationCondition="None" isOptional="True" />
-          <column name="condition2_upper" displayName="Condition 2 upper" dataType="Double" validationType="Decimal" validationCondition="None" isOptional="True" />
+          <column name="condition2Lower" displayName="Condition 2 lower" dataType="Double" validationType="Decimal" validationCondition="None" isOptional="True" />
+          <column name="condition2Upper" displayName="Condition 2 upper" dataType="Double" validationType="Decimal" validationCondition="None" isOptional="True" />
       </dataSheet>
 
       <dataSheet name="FutureConditions" displayName="Future Conditions" isSingleRow="True">
-          <column name="compare_to_future" displayName="Compare to future" dataType="String" isOptional="True" defaultValue="none" />
-          <column name="condition1_future_file" displayName="Condition 1 future file" dataType="String" isExternalFile="True" externalFileFilter="GeoTIFF Files (*.tif)|*.tif|All Files (*.*)|*.*" isRaster="True" isOptional="True" />
-          <column name="condition2_future_file" displayName="Condition 2 future file" dataType="String" isExternalFile="True" externalFileFilter="GeoTIFF Files (*.tif)|*.tif|All Files (*.*)|*.*" isRaster="True" isOptional="True" />
+          <column name="compareToFuture" displayName="Compare to future" dataType="String" isOptional="True" defaultValue="none" />
+          <column name="condition1FutureFile" displayName="Condition 1 future file" dataType="String" isExternalFile="True" externalFileFilter="GeoTIFF Files (*.tif)|*.tif|All Files (*.*)|*.*" isRaster="True" isOptional="True" />
+          <column name="condition2FutureFile" displayName="Condition 2 future file" dataType="String" isExternalFile="True" externalFileFilter="GeoTIFF Files (*.tif)|*.tif|All Files (*.*)|*.*" isRaster="True" isOptional="True" />
       </dataSheet>
 
       <dataSheet name="reclassificationThresholds" displayName="Category Thresholds">
@@ -79,14 +79,14 @@
       </dataSheet>
 
       <dataSheet name="outputSpatial" displayName="Omniscape Outputs" isSingleRow="True">
-          <column name="cum_currmap" displayName="Cumulative current flow" dataType="String" isExternalFile="True" externalFileFilter="GeoTIFF Files (*.tif)|*.tif|All Files (*.*)|*.*" isRaster="True" />
-          <column name="flow_potential" displayName="Flow potential" dataType="String" isExternalFile="True" externalFileFilter="GeoTIFF Files (*.tif)|*.tif|All Files (*.*)|*.*" isRaster="True" />
-          <column name="normalized_cum_currmap" displayName="Normalized current flow" dataType="String" isExternalFile="True" externalFileFilter="GeoTIFF Files (*.tif)|*.tif|All Files (*.*)|*.*" isRaster="True" />
-          <column name="classified_resistance" displayName="Classified resistance" dataType="String" isExternalFile="True" externalFileFilter="GeoTIFF Files (*.tif)|*.tif|All Files (*.*)|*.*" isRaster="True" />
+          <column name="cumCurrmap" displayName="Cumulative current flow" dataType="String" isExternalFile="True" externalFileFilter="GeoTIFF Files (*.tif)|*.tif|All Files (*.*)|*.*" isRaster="True" />
+          <column name="flowPotential" displayName="Flow potential" dataType="String" isExternalFile="True" externalFileFilter="GeoTIFF Files (*.tif)|*.tif|All Files (*.*)|*.*" isRaster="True" />
+          <column name="normalizedCumCurrmap" displayName="Normalized current flow" dataType="String" isExternalFile="True" externalFileFilter="GeoTIFF Files (*.tif)|*.tif|All Files (*.*)|*.*" isRaster="True" />
+          <column name="classifiedResistance" displayName="Classified resistance" dataType="String" isExternalFile="True" externalFileFilter="GeoTIFF Files (*.tif)|*.tif|All Files (*.*)|*.*" isRaster="True" />
       </dataSheet>
 
       <dataSheet name="outputSpatialMovement" displayName="Connectivity Categories" isSingleRow="True">
-          <column name="movement_types" displayName="Connectivity categories" dataType="String" isExternalFile="True" externalFileFilter="GeoTIFF Files (*.tif)|*.tif|All Files (*.*)|*.*" isRaster="True" />
+          <column name="movementTypes" displayName="Connectivity categories" dataType="String" isExternalFile="True" externalFileFilter="GeoTIFF Files (*.tif)|*.tif|All Files (*.*)|*.*" isRaster="True" />
       </dataSheet>
 
       <dataSheet name="outputTabularReclassification" displayName="Connectivity Categories Summary">
@@ -178,14 +178,14 @@
 
     <layout type="Map">
       <group name="Inputs" displayName="Inputs">
-        <item name="Required_source_file" displayName="Sources" dataSheet="Required" column="source_file" />
-        <item name="outputSpatial_classified_resistance" displayName="Resistance" dataSheet="outputSpatial" column="classified_resistance" />
+        <item name="RequiredSourceFile" displayName="Sources" dataSheet="Required" column="sourceFile" />
+        <item name="outputSpatialClassifiedResistance" displayName="Resistance" dataSheet="outputSpatial" column="classifiedResistance" />
       </group>
       <group name="Outputs" displayName="Outputs">
-        <item name="outputSpatial_cum_currmap" displayName="Cumulative current flow" dataSheet="outputSpatial" column="cum_currmap" />
-        <item name="outputSpatial_flow_potential" displayName="Flow potential" dataSheet="outputSpatial" column="flow_potential" />
-        <item name="outputSpatial_normalized_cum_currmap" displayName="Normalized current flow" dataSheet="outputSpatial" column="normalized_cum_currmap" />
-        <item name="outputSpatialMovement_movement_types" displayName="Connectivity categories" dataSheet="outputSpatialMovement" column="movement_types" />
+        <item name="outputSpatialCumCurrmap" displayName="Cumulative current flow" dataSheet="outputSpatial" column="cumCurrmap" />
+        <item name="outputSpatialFlowPotential" displayName="Flow potential" dataSheet="outputSpatial" column="flowPotential" />
+        <item name="outputSpatialNormalizedCumCurrmap" displayName="Normalized current flow" dataSheet="outputSpatial" column="normalizedCumCurrmap" />
+        <item name="outputSpatialMovementMovementTypes" displayName="Connectivity categories" dataSheet="outputSpatialMovement" column="movementTypes" />
       </group>
     </layout>
 

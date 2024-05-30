@@ -43,7 +43,7 @@ myOutput = myScenario.datasheets(name = "omniscape_outputSpatialMovement", show_
 
 # Validation -------------------------------------------------------------------
 
-if myInput.normalized_cum_currmap[0] != myInput.normalized_cum_currmap[0]:
+if myInput.normalizedCumCurrmap[0] != myInput.normalizedCumCurrmap[0]:
     sys.exit("'Categorize Connectivity Output' was added to the pipeline. Therefore, a 'Normalized current' raster is required.")
 
 if movementTypeClasses.empty:
@@ -58,7 +58,7 @@ if reclassificationThresholds.empty:
 
 ps.environment.progress_bar(message = "Categorizing connectivity output", report_type = "message")
 
-normCurr = rasterio.open(myInput.normalized_cum_currmap[0])
+normCurr = rasterio.open(myInput.normalizedCumCurrmap[0])
 data = normCurr.read()
 reclassRaster = data.copy()
 
@@ -72,7 +72,7 @@ with rasterio.open(
     mode="w", **outMeta) as outputRaster:
     outputRaster.write(reclassRaster)
 
-myOutput.movement_types = pd.Series(os.path.join(outputMovementPath, "connectivity_categories.tif"))
+myOutput.movementTypes = pd.Series(os.path.join(outputMovementPath, "connectivity_categories.tif"))
 
 unique, counts = np.unique(reclassRaster, return_counts = True)
 unique = pd.DataFrame(unique)
