@@ -130,60 +130,60 @@ if outputOptions.writeAsTif[0] != outputOptions.writeAsTif[0]:
 
 # Validation -------------------------------------------------------------------
 
-if juliaConfig.julia_path.empty:
+if juliaConfig.juliaPath.empty:
     sys.exit("A julia executable is required.")
 
-if not os.path.isfile(juliaConfig.julia_path[0]):
+if not os.path.isfile(juliaConfig.juliaPath[0]):
     sys.exit("The path to the julia executable is not valid or does not exist.")
 
-if ' ' in juliaConfig.julia_path[0]:
+if ' ' in juliaConfig.juliaPath[0]:
     sys.exit("The path to the julia executable may not contains spaces.")
 
-if not 'julia.exe' in juliaConfig.julia_path[0]:
+if not 'julia.exe' in juliaConfig.juliaPath[0]:
     sys.exit("The path to the julia executable must contain the 'julia.exe' file.")
 
-if requiredData.resistance_file[0] != requiredData.resistance_file[0]:
+if requiredData.resistanceFile[0] != requiredData.resistanceFile[0]:
     sys.exit("'Resistance file' is required.")
 
 if requiredData.radius[0] != requiredData.radius[0]:
     sys.exit("'Radius' is required.")
 
-if generalOptions.source_from_resistance[0] == "No" and requiredData.source_file[0] == "None":
+if generalOptions.sourceFromResistance[0] == "No" and requiredData.sourceFile[0] == "None":
     sys.exit("'Source from resistance' was set to 'No', therefore 'Source file' is required.")
 
-if generalOptions.source_from_resistance[0] == "No" and requiredDataValidation.source_file[0] == requiredDataValidation.source_file[0]:
-    resistanceLayer = rasterio.open(requiredDataValidation.resistance_file[0])
-    sourceLayer = rasterio.open(requiredDataValidation.source_file[0])
+if generalOptions.sourceFromResistance[0] == "No" and requiredDataValidation.sourceFile[0] == requiredDataValidation.sourceFile[0]:
+    resistanceLayer = rasterio.open(requiredDataValidation.resistanceFile[0])
+    sourceLayer = rasterio.open(requiredDataValidation.sourceFile[0])
     if resistanceLayer.crs != sourceLayer.crs:
         sys.exit("'Resistance file' and 'Source file' must have the same Coordinate Reference System.")
     if resistanceLayer.bounds != sourceLayer.bounds:
         sys.exit("'Resistance file' and 'Source file' must have the same raster extent.")
 
 if not resistanceOptions.empty:
-    if resistanceOptions.reclassify_resistance[0] == "Yes":
+    if resistanceOptions.reclassifyResistance[0] == "Yes":
         if reclassTable.empty:
             sys.exit("'Reclassify resistance' was set to 'Yes', therefore 'Reclass Table' is required.")
-        if reclassTable['land_cover'].isnull().values.any():
+        if reclassTable['landCover'].isnull().values.any():
             sys.exit("'Reclass Table' has NaN values for 'Land cover class'.")
-        if reclassTable['resistance_value'].isnull().values.any():
+        if reclassTable['resistanceValue'].isnull().values.any():
             sys.exit("'Reclass Table' has NaN values for 'Resistance value'. If necessary, NaN values should be specified as -9999.")
     
 if not conditionalOptions.empty:
-    if conditionalOptions.conditional[0] == "Yes" and conditionalOptions.n_conditions[0] == "1" and condition1.condition1_file[0] != condition1.condition1_file[0]:
+    if conditionalOptions.conditional[0] == "Yes" and conditionalOptions.nConditions[0] == "1" and condition1.condition1File[0] != condition1.condition1File[0]:
         sys.exit("'Conditional' was set to 'Yes' and 'Number of conditions' was set to 1, therefore 'Condition 1 file' is required.")
-    if conditionalOptions.conditional[0] == "Yes" and conditionalOptions.n_conditions[0] == 2 and (condition1.condition1_file[0] != condition1.condition1_file[0] or condition2.condition2_file[0] != condition2.condition2_file[0]):
+    if conditionalOptions.conditional[0] == "Yes" and conditionalOptions.nConditions[0] == 2 and (condition1.condition1File[0] != condition1.condition1File[0] or condition2.condition2File[0] != condition2.condition2File[0]):
         sys.exit("'Conditional' was set to 'Yes' and 'Number of conditions' was set to 2, therefore 'Condition 1 file' and 'Condition 2 file' are required.")
-    if condition1.comparison1[0] == "within" and (condition1.condition1_lower[0] != condition1.condition1_lower[0] or condition1.condition1_upper[0] != condition1.condition1_upper[0]):
+    if condition1.comparison1[0] == "within" and (condition1.condition1Lower[0] != condition1.condition1Lower[0] or condition1.condition1Upper[0] != condition1.condition1Upper[0]):
         sys.exit("'Comparison 1' was set to 'within', therefore 'Condition 1 lower' and 'Condition 1 upper' are required.")
-    if condition2.comparison2[0] == "within" and (condition2.condition2_lower[0] != condition2.condition2_lower[0] or condition2.condition2_upper[0] != condition2.condition2_upper[0]):
+    if condition2.comparison2[0] == "within" and (condition2.condition2Lower[0] != condition2.condition2Lower[0] or condition2.condition2Upper[0] != condition2.condition2Upper[0]):
         sys.exit("'Comparison 2' was set to 'within', therefore 'Condition 2 lower' and 'Condition 2 upper' are required.")
 
 if not futureConditions.empty:
-    if futureConditions.compare_to_future[0] == "1" and futureConditions.condition1_future_file[0] != futureConditions.condition1_future_file[0]:
+    if futureConditions.compareToFuture[0] == "1" and futureConditions.condition1FutureFile[0] != futureConditions.condition1FutureFile[0]:
         sys.exit("'Compare to future' was set to 1, therefore 'Condition 1 future file' is required.")
-    if futureConditions.compare_to_future[0] == "2" and futureConditions.condition2_future_file[0] != futureConditions.condition2_future_file[0]:
+    if futureConditions.compareToFuture[0] == "2" and futureConditions.condition2FutureFile[0] != futureConditions.condition2FutureFile[0]:
         sys.exit("'Compare to future' was set to 2, therefore 'Condition 2 future file' is required.")
-    if futureConditions.compare_to_future[0] == "both" and (futureConditions.condition1_future_file[0] != futureConditions.condition1_future_file[0] or futureConditions.condition2_future_file[0] != futureConditions.condition2_future_file[0]):
+    if futureConditions.compareToFuture[0] == "both" and (futureConditions.condition1FutureFile[0] != futureConditions.condition1FutureFile[0] or futureConditions.condition2FutureFile[0] != futureConditions.condition2FutureFile[0]):
         sys.exit("'Compare to future' was set to 'both', therefore 'Condition 1 future file' and 'Condition 2 future file' are required.")
 
 
@@ -204,7 +204,7 @@ if not reclassTable.empty:
     reclassTablePath = os.path.join(dataPath, "omniscape_ResistanceOptions")
     if os.path.exists(reclassTablePath) == False:
         os.mkdir(reclassTablePath)
-    reclassTable.loc[reclassTable["resistance_value"] == -9999, "resistance_value"] = "missing"
+    reclassTable.loc[reclassTable["resistanceValue"] == -9999, "resistanceValue"] = "missing"
     with open(os.path.join(reclassTablePath, "reclass_table.txt"), "w") as f:
         file = reclassTable.to_string(header=False, index=False)
         f.write(file)
@@ -216,48 +216,48 @@ else:
 file = open(os.path.join(dataPath, "omniscape_Required", "config.ini"), "w")
 file.write(
     "[Required]" + "\n"
-    "resistance_file = " + os.path.join(dataPath, "omniscape_Required", requiredData.resistance_file[0]) + "\n"
+    "resistance_file = " + os.path.join(dataPath, "omniscape_Required", requiredData.resistanceFile[0]) + "\n"
     "radius = " + repr(requiredData.radius[0]) + "\n"
     "project_name = " + os.path.join(wrkDir, "Scenario-" + repr(myScenarioID), "omniscape_outputSpatial") + "\n"
     "source_file = " + requiredData.source_file[0] + "\n"
     "\n"
     "[General Options]" + "\n"
-    "block_size = " + repr(generalOptions.block_size[0]) + "\n"
-    "source_from_resistance = " + generalOptions.source_from_resistance[0] + "\n"
-    "resistance_is_conductance = " + generalOptions.resistance_is_conductance[0] + "\n"
+    "block_size = " + repr(generalOptions.blockSize[0]) + "\n"
+    "source_from_resistance = " + generalOptions.sourceFromResistance[0] + "\n"
+    "resistance_is_conductance = " + generalOptions.resistanceIsConductance[0] + "\n"
     "r_cutoff = 1" + "\n"
     "buffer = " + repr(generalOptions.buffer[0]) + "\n"
-    "source_threshold = " + repr(generalOptions.source_threshold[0]) + "\n"
-    "calc_normalized_current = " + generalOptions.calc_normalized_current[0] + "\n"
-    "calc_flow_potential = " + generalOptions.calc_flow_potential[0] + "\n"
-    "allow_different_projections = " + generalOptions.allow_different_projections[0] + "\n"
-    "connect_four_neighbors_only = " + generalOptions.connect_four_neighbors_only[0] + "\n"
+    "source_threshold = " + repr(generalOptions.sourceThreshold[0]) + "\n"
+    "calc_normalized_current = " + generalOptions.calcNormalizedCurrent[0] + "\n"
+    "calc_flow_potential = " + generalOptions.calcFlowPotential[0] + "\n"
+    "allow_different_projections = " + generalOptions.allowDifferentProjections[0] + "\n"
+    "connect_four_neighbors_only = " + generalOptions.connectFourNeighborsOnly[0] + "\n"
     "solver = " + generalOptions.solver[0] + "\n"
     "\n"
     "[Resistance Reclassification]" + "\n"
-    "reclassify_resistance = " + resistanceOptions.reclassify_resistance[0] + "\n"
+    "reclassify_resistance = " + resistanceOptions.reclassifyResistance[0] + "\n"
     "reclass_table = " + os.path.join(reclassTablePath, "reclass_table.txt") + "\n"
-    "write_reclassified_resistance = " + resistanceOptions.write_reclassified_resistance[0] + "\n"
+    "write_reclassified_resistance = " + resistanceOptions.writeReclassifiedResistance[0] + "\n"
     "\n"
     "[Conditional Connectivity]" + "\n"
     "conditional = " + conditionalOptions.conditional[0] + "\n"
-    "n_conditions = " + repr(conditionalOptions.n_conditions[0]) + "\n"
-    "condition1_file = " + condition1.condition1_file[0] + "\n"
+    "n_conditions = " + repr(conditionalOptions.nConditions[0]) + "\n"
+    "condition1_file = " + condition1.condition1File[0] + "\n"
     "comparison1 = " + condition1.comparison1[0] + "\n"
-    "condition1_lower = " + condition1.condition1_lower[0] + "\n"
-    "condition1_upper = " + condition1.condition1_upper[0] + "\n"
-    "condition2_file = " + condition2.condition2_file[0] + "\n"
+    "condition1_lower = " + condition1.condition1Lower[0] + "\n"
+    "condition1_upper = " + condition1.condition1Upper[0] + "\n"
+    "condition2_file = " + condition2.condition2File[0] + "\n"
     "comparison2 = " + condition2.comparison2[0] + "\n"
-    "condition2_lower = " + condition2.condition2_lower[0] + "\n"
-    "condition2_upper = " + condition2.condition2_upper[0] + "\n"
-    "compare_to_future = " + futureConditions.compare_to_future[0] + "\n"
-    "condition1_future_file = " + futureConditions.condition1_future_file[0] + "\n"
-    "condition2_future_file = " + futureConditions.condition2_future_file[0] + "\n"
+    "condition2_lower = " + condition2.condition2Lower[0] + "\n"
+    "condition2_upper = " + condition2.condition2Upper[0] + "\n"
+    "compare_to_future = " + futureConditions.compareToFuture[0] + "\n"
+    "condition1_future_file = " + futureConditions.condition1FutureFile[0] + "\n"
+    "condition2_future_file = " + futureConditions.condition2FutureFile[0] + "\n"
     "\n"
     "[Output Options]" + "\n"
-    "write_raw_currmap = " + outputOptions.write_raw_currmap[0] + "\n"
-    "mask_nodata = " + outputOptions.mask_nodata[0] + "\n"
-    "write_as_tif = " + outputOptions.write_as_tif[0] + "\n"
+    "write_raw_currmap = " + outputOptions.writeRawCurrmap[0] + "\n"
+    "mask_nodata = " + outputOptions.maskNodata[0] + "\n"
+    "write_as_tif = " + outputOptions.writeAsTif[0] + "\n"
     "\n"
     "[Multiprocessing]" + "\n"
     "parallelize = " + multiprocessing.EnableMultiprocessing[0] + "\n"
@@ -287,7 +287,7 @@ file.close()
 
 ps.environment.progress_bar(message="Running Omniscape", report_type="message")
 
-jlExe = juliaConfig.julia_path[0]
+jlExe = juliaConfig.juliaPath[0]
 runFile = os.path.join(dataPath, "omniscape_Required", "runOmniscape.jl")
 
 if ' ' in dataPath:
@@ -303,19 +303,19 @@ os.system(runOmniscape)
 
 myOutput = myScenario.datasheets(name = "omniscape_outputSpatial")
 
-if outputOptions.write_raw_currmap[0] == "true":
-    myOutput.cum_currmap = pd.Series(os.path.join(wrkDir, "Scenario-" + repr(myScenarioID), "omniscape_outputSpatial", "cum_currmap.tif"))
+if outputOptions.writeRawCurrmap[0] == "true":
+    myOutput.cumCurrmap = pd.Series(os.path.join(wrkDir, "Scenario-" + repr(myScenarioID), "omniscape_outputSpatial", "cum_currmap.tif"))
 
-if generalOptions.calc_flow_potential[0] == "true":
-    myOutput.flow_potential = pd.Series(os.path.join(wrkDir, "Scenario-" + repr(myScenarioID), "omniscape_outputSpatial", "flow_potential.tif"))
+if generalOptions.calcFlowPotential[0] == "true":
+    myOutput.flowPotential = pd.Series(os.path.join(wrkDir, "Scenario-" + repr(myScenarioID), "omniscape_outputSpatial", "flow_potential.tif"))
 
-if generalOptions.calc_normalized_current[0] == "true":
-    myOutput.normalized_cum_currmap = pd.Series(os.path.join(wrkDir, "Scenario-" + repr(myScenarioID), "omniscape_outputSpatial", "normalized_cum_currmap.tif"))
+if generalOptions.calcNormalizedCurrent[0] == "true":
+    myOutput.normalizedCumCurrmap = pd.Series(os.path.join(wrkDir, "Scenario-" + repr(myScenarioID), "omniscape_outputSpatial", "normalized_cum_currmap.tif"))
 
-if (os.path.isfile(os.path.join(wrkDir, "Scenario-" + repr(myScenarioID), "omniscape_outputSpatial", "classified_resistance.tif"))) & (resistanceOptions.write_reclassified_resistance[0] == "true"):
-    myOutput.classified_resistance = pd.Series(os.path.join(wrkDir, "Scenario-" + repr(myScenarioID), "omniscape_outputSpatial", "classified_resistance.tif"))
+if (os.path.isfile(os.path.join(wrkDir, "Scenario-" + repr(myScenarioID), "omniscape_outputSpatial", "classified_resistance.tif"))) & (resistanceOptions.writeReclassifiedResistance[0] == "true"):
+    myOutput.classifiedResistance = pd.Series(os.path.join(wrkDir, "Scenario-" + repr(myScenarioID), "omniscape_outputSpatial", "classified_resistance.tif"))
 else:
-    myOutput.classified_resistance = pd.Series(requiredDataValidation.resistance_file[0])
+    myOutput.classifiedResistance = pd.Series(requiredDataValidation.resistanceFile[0])
 
 
 

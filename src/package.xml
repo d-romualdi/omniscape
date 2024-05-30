@@ -171,8 +171,8 @@
 
     <layout type="Chart">
       <group name="Connectivitycategories" displayName="Connectivity categories">
-        <item name="outputTabularReclassification_amountArea" displayName="Area (ha)" dataSheet="outputTabularReclassification" column="amountArea" filter="movementTypesID" prefixFolderName="False" />
-        <item name="outputTabularReclassification_percentCover" displayName="Percent cover" dataSheet="outputTabularReclassification" column="percentCover" filter="movementTypesID" prefixFolderName="False" />
+        <item name="outputTabularReclassificationAmountArea" displayName="Area (ha)" dataSheet="outputTabularReclassification" column="amountArea" filter="movementTypesID" prefixFolderName="False" />
+        <item name="outputTabularReclassificationPercentCover" displayName="Percent cover" dataSheet="outputTabularReclassification" column="percentCover" filter="movementTypesID" prefixFolderName="False" />
       </group>
     </layout>
 
