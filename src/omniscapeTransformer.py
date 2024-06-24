@@ -219,7 +219,7 @@ file.write(
     "resistance_file = " + os.path.join(dataPath, "omniscape_Required", requiredData.resistanceFile[0]) + "\n"
     "radius = " + repr(requiredData.radius[0]) + "\n"
     "project_name = " + os.path.join(wrkDir, "Scenario-" + repr(myScenarioID), "omniscape_outputSpatial") + "\n"
-    "source_file = " + requiredData.source_file[0] + "\n"
+    "source_file = " + requiredData.sourceFile[0] + "\n"
     "\n"
     "[General Options]" + "\n"
     "block_size = " + repr(generalOptions.blockSize[0]) + "\n"
