@@ -1,7 +1,0 @@
-# Syncrosim Generated Connectivity categories Color Map (QGIS-compatible),,,,,
-INTERPOLATION:DISCRETE
-1.0000,240,240,240,255,1 - Impeded
-2.0000,147,201,255,255,2 - Diffuse
-3.0000,0,128,0,255,3 - Intensified
-4.0000,255,0,0,255,4 - Channelized
--9999.0000,192,192,192,255,No data
