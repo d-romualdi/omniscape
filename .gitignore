@@ -14,4 +14,6 @@ design
 omniscape
 
 # Template libraries
-/src/templates
+/src/templates/
+
+
