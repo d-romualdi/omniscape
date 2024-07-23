@@ -12,3 +12,6 @@ vendor
 # Package development & previous package versions
 design
 omniscape
+
+# Template libraries
+/src/templates
