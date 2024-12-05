@@ -14,7 +14,7 @@ import numpy as np
 ps.environment.progress_bar(message = "Setting up Scenario", report_type = "message")
 
 e = ps.environment._environment()
-wrkDir = e.output_directory.item()
+wrkDir = e.data_directory.item()
 
 myLibrary = ps.Library()
 myProject = myLibrary.projects(pid = 1) 
@@ -23,7 +23,7 @@ myScenario = myLibrary.scenarios(myScenarioID)
 myScenarioParentID = int(myScenario.parent_id)
 myParentScenario = myLibrary.scenarios(sid = myScenarioParentID)
 
-dataPath = os.path.join(e.input_directory.item(), "Scenario-" + repr(myScenarioID))
+dataPath = os.path.join(e.data_directory.item(), "Scenario-" + repr(myScenarioID))
 
 # Create directory, if applicable
 outputMovementPath = os.path.join(wrkDir, "Scenario-" + repr(myScenarioID), "omniscape_outputSpatialMovement")
@@ -43,7 +43,7 @@ myOutput = myScenario.datasheets(name = "omniscape_outputSpatialMovement", show_
 
 # Validation -------------------------------------------------------------------
 
-if myInput.normalized_cum_currmap[0] != myInput.normalized_cum_currmap[0]:
+if myInput.normalizedCumCurrmap.item() != myInput.normalizedCumCurrmap.item():
     sys.exit("'Categorize Connectivity Output' was added to the pipeline. Therefore, a 'Normalized current' raster is required.")
 
 if movementTypeClasses.empty:
@@ -58,7 +58,7 @@ if reclassificationThresholds.empty:
 
 ps.environment.progress_bar(message = "Categorizing connectivity output", report_type = "message")
 
-normCurr = rasterio.open(myInput.normalized_cum_currmap[0])
+normCurr = rasterio.open(myInput.normalizedCumCurrmap.item())
 data = normCurr.read()
 reclassRaster = data.copy()
 
@@ -72,7 +72,7 @@ with rasterio.open(
     mode="w", **outMeta) as outputRaster:
     outputRaster.write(reclassRaster)
 
-myOutput.movement_types = pd.Series(os.path.join(outputMovementPath, "connectivity_categories.tif"))
+myOutput.movementTypes = pd.Series(os.path.join(outputMovementPath, "connectivity_categories.tif"))
 
 unique, counts = np.unique(reclassRaster, return_counts = True)
 unique = pd.DataFrame(unique)
@@ -87,7 +87,7 @@ movementTypesFreq = pd.merge(right = movementFreq, left = movementTypeClasses)
 percentCover = movementTypesFreq.freq/movementTypesFreq.freq.sum()
 amountArea = (movementTypesFreq.freq * normCurr.res[1] * normCurr.res[1])/10000
 
-tabularMovementTypes = pd.concat([movementTypesFreq.movementTypesID, amountArea, percentCover], axis = 1, ignore_index = True)
+tabularMovementTypes = pd.concat([movementTypesFreq.movementTypesId, amountArea, percentCover], axis = 1, ignore_index = True)
 myTabularOutput = tabularMovementTypes.rename(columns = {0: "movementTypesID", 1:"amountArea", 2:"percentCover"})
 
 myParentScenario.save_datasheet(name = "omniscape_outputTabularReclassification", data = myTabularOutput)

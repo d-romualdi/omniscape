@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<update comment="Update to omniscape 2.1 that removes underscores from column names for compatibility with SyncroSim 3">
+
+    <!-- Rename columns -->
+    <action code="RenameColumn" tableName="omniscape_Required" oldColumnName="resistance_file" newColumnName="resistanceFile">
+    </action>
+    <action code="RenameColumn" tableName="omniscape_Required" oldColumnName="source_file" newColumnName="sourceFile">
+    </action>
+    <action code="RenameColumn" tableName="omniscape_juliaConfiguration" oldColumnName="julia_path" newColumnName="juliaPath">
+    </action>
+    <action code="RenameColumn" tableName="omniscape_GeneralOptions" oldColumnName="block_size" newColumnName="blockSize">
+    </action>
+    <action code="RenameColumn" tableName="omniscape_GeneralOptions" oldColumnName="source_from_resistance" newColumnName="sourceFromResistance">
+    </action>
+    <action code="RenameColumn" tableName="omniscape_GeneralOptions" oldColumnName="resistance_is_conductance" newColumnName="resistanceIsConductance">
+    </action>
+    <action code="RenameColumn" tableName="omniscape_GeneralOptions" oldColumnName="r_cutoff" newColumnName="rCutoff">
+    </action>
+    <action code="RenameColumn" tableName="omniscape_GeneralOptions" oldColumnName="source_threshold" newColumnName="sourceThreshold">
+    </action>
+    <action code="RenameColumn" tableName="omniscape_GeneralOptions" oldColumnName="calc_normalized_current" newColumnName="calcNormalizedCurrent">
+    </action>
+    <action code="RenameColumn" tableName="omniscape_GeneralOptions" oldColumnName="calc_flow_potential" newColumnName="calcFlowPotential">
+    </action>
+    <action code="RenameColumn" tableName="omniscape_GeneralOptions" oldColumnName="allow_different_projections" newColumnName="allowDifferentProjections">
+    </action>
+    <action code="RenameColumn" tableName="omniscape_GeneralOptions" oldColumnName="connect_four_neighbors_only" newColumnName="connectFourNeighborsOnly">
+    </action>
+    <action code="RenameColumn" tableName="omniscape_ResistanceOptions" oldColumnName="reclassify_resistance" newColumnName="reclassifyResistance">
+    </action>
+    <action code="RenameColumn" tableName="omniscape_ResistanceOptions" oldColumnName="write_reclassified_resistance" newColumnName="writeReclassifiedResistance">
+    </action>
+    <action code="RenameColumn" tableName="omniscape_ReclassTable" oldColumnName="land_cover" newColumnName="landCover">
+    </action>
+    <action code="RenameColumn" tableName="omniscape_ReclassTable" oldColumnName="resistance_value" newColumnName="resistanceValue">
+    </action>
+    <action code="RenameColumn" tableName="omniscape_OutputOptions" oldColumnName="write_raw_currmap" newColumnName="writeRawCurrmap">
+    </action>
+    <action code="RenameColumn" tableName="omniscape_OutputOptions" oldColumnName="mask_nodata" newColumnName="maskNodata">
+    </action>
+    <action code="RenameColumn" tableName="omniscape_OutputOptions" oldColumnName="write_as_tif" newColumnName="writeAsTif">
+    </action>
+    <action code="RenameColumn" tableName="omniscape_ConditionalOptions" oldColumnName="n_conditions" newColumnName="nConditions">
+    </action>
+    <action code="RenameColumn" tableName="omniscape_Condition1" oldColumnName="condition1_file" newColumnName="condition1File">
+    </action>
+    <action code="RenameColumn" tableName="omniscape_Condition1" oldColumnName="condition1_lower" newColumnName="condition1Lower">
+    </action>
+    <action code="RenameColumn" tableName="omniscape_Condition1" oldColumnName="condition1_upper" newColumnName="condition1Upper">
+    </action>
+    <action code="RenameColumn" tableName="omniscape_Condition2" oldColumnName="condition2_file" newColumnName="condition2File">
+    </action>
+    <action code="RenameColumn" tableName="omniscape_Condition2" oldColumnName="condition2_lower" newColumnName="condition2Lower">
+    </action>
+    <action code="RenameColumn" tableName="omniscape_Condition2" oldColumnName="condition2_upper" newColumnName="condition2Upper">
+    </action>
+    <action code="RenameColumn" tableName="omniscape_FutureConditions" oldColumnName="compare_to_future" newColumnName="compareToFuture">
+    </action>
+    <action code="RenameColumn" tableName="omniscape_FutureConditions" oldColumnName="condition1_future_file" newColumnName="condition1FutureFile">
+    </action>
+    <action code="RenameColumn" tableName="omniscape_FutureConditions" oldColumnName="condition2_future_file" newColumnName="condition2FutureFile">
+    </action>
+    <action code="RenameColumn" tableName="omniscape_outputSpatial" oldColumnName="cum_currmap" newColumnName="cumCurrmap">
+    </action>
+    <action code="RenameColumn" tableName="omniscape_outputSpatial" oldColumnName="flow_potential" newColumnName="flowPotential">
+    </action>
+    <action code="RenameColumn" tableName="omniscape_outputSpatial" oldColumnName="normalized_cum_currmap" newColumnName="normalizedCumCurrmap">
+    </action>
+    <action code="RenameColumn" tableName="omniscape_outputSpatial" oldColumnName="classified_resistance" newColumnName="classifiedResistance">
+    </action>
+    <action code="RenameColumn" tableName="omniscape_outputSpatialMovement" oldColumnName="movement_types" newColumnName="movementTypes">
+    </action>
+
+    <!-- Rename chart variables -->
+    <action code="RenameChartVariable" oldVariableName="outputTabularReclassification_amountArea" newVariableName="outputTabularReclassificationAmountArea">
+    </action>
+    <action code="RenameChartVariable" oldVariableName="outputTabularReclassification_percentCover" newVariableName="outputTabularReclassificationPercentCover">
+    </action>
+
+    <!-- Rename map variables -->
+    <action code="RenameMapVariable" oldVariableName="Required_source_file" newVariableName="RequiredSourceFile">
+    </action>
+    <action code="RenameMapVariable" oldVariableName="outputSpatial_classified_resistance" newVariableName="outputSpatialClassifiedResistance">
+    </action>
+    <action code="RenameMapVariable" oldVariableName="outputSpatial_cum_currmap" newVariableName="outputSpatialCumCurrmap">
+    </action>
+    <action code="RenameMapVariable" oldVariableName="outputSpatial_flow_potential" newVariableName="outputSpatialFlowPotential">
+    </action>
+    <action code="RenameMapVariable" oldVariableName="outputSpatial_normalized_cum_currmap" newVariableName="outputSpatialNormalizedCumCurrmap">
+    </action>
+    <action code="RenameMapVariable" oldVariableName="outputSpatialMovement_movement_types" newVariableName="outputSpatialMovementMovementTypes">
+    </action>
+
+</update>
