@@ -69,4 +69,6 @@ Colin Daniel (Author) <a href="https://orcid.org/0000-0001-7367-2041"><img align
 
 ## Citation
 
-Firkowski CR, Rayfield B, Birchard K, Fortin M-J, Daniel C. (2024). omniscape SyncroSim: omnidirectional landscape connectivity based on Omniscape.jl in SyncroSim. https://apexrms.github.io/omniscape/.
+<a href="https://doi.org/10.5281/zenodo.10818776" target="_blank"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.10818776.svg" alt="DOI"></a>
+
+Firkowski, C., Rayfield, B., Birchard, K., Fortin, M.-J., & Daniel, C. (2023). omniscape SyncroSim: Omni-directional habitat connectivity based on circuit theory (1.0.1). ApexRMS. [https://doi.org/10.5281/zenodo.10818776](https://doi.org/10.5281/zenodo.10818776).

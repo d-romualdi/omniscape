@@ -7,6 +7,7 @@ import pandas as pd
 import sys
 import os
 import rasterio
+import numpy as np
 
 ps.environment.progress_bar(message="Setting up Scenario", report_type="message")
 
@@ -128,6 +129,7 @@ if outputOptions.writeAsTif.item() != outputOptions.writeAsTif.item():
 
 
 
+
 # Validation -------------------------------------------------------------------
 
 if juliaConfig.juliaPath.empty:
@@ -145,7 +147,14 @@ if not 'julia.exe' in juliaConfig.juliaPath.item():
 if requiredData.resistanceFile.item() != requiredData.resistanceFile.item():
     sys.exit("'Resistance file' is required.")
 
-if requiredData.radius.item() != requiredData.radius.item():
+resistanceLayer = rasterio.open(requiredDataValidation.resistance_file[0])
+dataRaster = resistanceLayer.read()
+unique, counts = np.unique(dataRaster, return_counts = True)
+unique = pd.DataFrame(unique)
+if (unique[0] <= 0).values.any():
+    sys.exit("'Resistance file' may not contain 0 or negative values.")
+
+if requiredData.radius[0] != requiredData.radius[0]:
     sys.exit("'Radius' is required.")
 
 if generalOptions.sourceFromResistance.item() == "No" and requiredData.sourceFile.item() == "None":
@@ -167,7 +176,7 @@ if not resistanceOptions.empty:
             sys.exit("'Reclass Table' has NaN values for 'Land cover class'.")
         if reclassTable['resistanceValue'].isnull().values.any():
             sys.exit("'Reclass Table' has NaN values for 'Resistance value'. If necessary, NaN values should be specified as -9999.")
-    
+
 if not conditionalOptions.empty:
     if conditionalOptions.conditional.item() == "Yes" and conditionalOptions.nConditions.item() == "1" and condition1.condition1File.item() != condition1.condition1File.item():
         sys.exit("'Conditional' was set to 'Yes' and 'Number of conditions' was set to 1, therefore 'Condition 1 file' is required.")
@@ -200,7 +209,9 @@ multiprocessing = multiprocessing.replace({'Yes': 'true', 'No': 'false'})
 
 # Prepare reclass file ---------------------------------------------------------
 
-if not reclassTable.empty:
+ps.environment.progress_bar(message="Preparing for Omniscape run", report_type="message")
+
+if not reclassTable.empty and (reclassTable != "None").values.any():
     reclassTablePath = os.path.join(dataPath, "omniscape_ResistanceOptions")
     if os.path.exists(reclassTablePath) == False:
         os.mkdir(reclassTablePath)
