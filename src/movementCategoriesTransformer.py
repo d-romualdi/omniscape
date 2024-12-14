@@ -4,6 +4,7 @@
 
 # Set up -----------------------------------------------------------------------
 
+from osgeo import gdal
 import pysyncrosim as ps
 import pandas as pd
 import os
