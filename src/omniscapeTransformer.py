@@ -2,6 +2,7 @@
 
 # Set up -----------------------------------------------------------------------
 
+from osgeo import gdal
 import pysyncrosim as ps
 import pandas as pd
 import sys
@@ -147,7 +148,7 @@ if not 'julia.exe' in juliaConfig.juliaPath.item():
 if requiredData.resistanceFile.item() != requiredData.resistanceFile.item():
     sys.exit("'Resistance file' is required.")
 
-resistanceLayer = rasterio.open(requiredDataValidation.resistance_file[0])
+resistanceLayer = rasterio.open(requiredDataValidation.resistanceFile[0])
 dataRaster = resistanceLayer.read()
 unique, counts = np.unique(dataRaster, return_counts = True)
 unique = pd.DataFrame(unique)
