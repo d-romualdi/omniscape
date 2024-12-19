@@ -7,6 +7,7 @@ permalink: /getting_started
 # Getting started with **omniscape** SyncroSim
 
 <div style="border: 1px solid black; padding: 10px;">
+
 **Notice to Users**
 
 The **Getting Started** documentation and associated **Tutorials** for this SyncroSim package currently reflects information for **SyncroSim version 2**. We are in the process of updating these pages to ensure compatibility with **SyncroSim version 3**.
