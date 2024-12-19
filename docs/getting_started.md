@@ -4,7 +4,7 @@ title: Getting started
 permalink: /getting_started
 ---
 
-# Getting started with **omniscape** SyncroSim - TEST
+# Getting started with **omniscape** SyncroSim
 
 To get started working with **omniscape** SyncroSim, begin by:
 <br>
